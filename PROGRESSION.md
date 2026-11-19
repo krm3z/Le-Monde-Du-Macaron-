@@ -30,7 +30,7 @@
 - [x] Commit « Vérification et corrections »
 
 ## Étape 4 — Déploiement (préparation)
-- [ ] Build compatible Cloudflare Pages, .gitignore
+- [x] Build compatible Cloudflare Pages, .gitignore
 
 ## Étape 5 — Rapport
 - [ ] RAPPORT.md + commit « Rapport »
@@ -40,3 +40,4 @@
 - Étape 1 finie : 94 produits (79 macarons + 15 calissons), 102 photos, 8 macarons détourés, boutique.json avec sources.
 - Étape 2 finie : Astro 7 statique, 6 pages + sitemap/robots, animations GSAP/Lenis, menu, filtre, cartes testés. Photos Litchi/Rose = logo du réseau → retirées.
 - Étape 3 finie : Lighthouse mobile 92-100 (a11y/BP/SEO 100), 0 débordement, 0 erreur console, 0 lien cassé. Plan OSM passé « au clic ».
+- Étape 4 finie : build `npm run build` → `dist/`, .node-version=24, _headers (cache/sécurité), .gitignore. Rien envoyé en ligne.
