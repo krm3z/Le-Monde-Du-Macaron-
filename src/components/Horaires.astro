@@ -1,0 +1,18 @@
+---
+// Tableau des horaires (jour par jour ou regroupés).
+import { boutique, plage, horairesGroupes } from '../lib/site.js';
+interface Props { groupes?: boolean; class?: string }
+const { groupes = false, class: cls } = Astro.props;
+const lignes = groupes
+  ? horairesGroupes().map((g) => ({ jour: g.jours, plage: g.plage, code: '' }))
+  : boutique.horaires.map((j) => ({ jour: j.jour, plage: plage(j), code: j.code }));
+const mark = (t) => t.replace('[À REMPLACER]', '<mark class="todo">[À REMPLACER]</mark>');
+---
+<dl class:list={['horaires', cls]} data-horaires>
+  {lignes.map((l) => (
+    <div class="horaires__ligne" data-jour={l.code}>
+      <dt>{l.jour}</dt>
+      <dd set:html={mark(l.plage)} />
+    </div>
+  ))}
+</dl>

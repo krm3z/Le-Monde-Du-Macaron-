@@ -56,7 +56,7 @@ Toutes les photos viennent du site du réseau Le Monde du Macaron (mondedumacaro
 | assets/photos/macaron-grand-marnier.jpg | https://www.mondedumacaron.fr/media/catalog/product/g/r/grand-marnier_1.jpg | Grand Marnier |
 | assets/photos/macaron-guimauve.jpg | https://www.mondedumacaron.fr/media/catalog/product/g/u/guimauve_1.jpg | Guimauve |
 | assets/photos/macaron-kiwi-banane.jpg | https://www.mondedumacaron.fr/media/catalog/product/k/i/kiwi_banane.jpg | Kiwi banane |
-| assets/photos/macaron-litchi.jpg | https://www.mondedumacaron.fr/media/catalog/product/placeholder/default/imge-remplacement_1.jpg | Litchi |
+| assets/photos/macaron-litchi.jpg | https://www.mondedumacaron.fr/media/catalog/product/placeholder/default/imge-remplacement_1.jpg | Litchi — **image générique (logo du réseau), non affichée : photo à fournir** |
 | assets/photos/macaron-mandarine-yuzu.jpg | https://www.mondedumacaron.fr/media/catalog/product/m/a/mandarine-yuzu.jpg | Mandarine yuzu |
 | assets/photos/macaron-mangue-passion.jpg | https://www.mondedumacaron.fr/media/catalog/product/m/a/mangue_passion_1.jpg | Mangue passion |
 | assets/photos/macaron-marron-glace.jpg | https://www.mondedumacaron.fr/media/catalog/product/m/a/marron_glac_.jpg | Marron glacé |
@@ -77,7 +77,7 @@ Toutes les photos viennent du site du réseau Le Monde du Macaron (mondedumacaro
 | assets/photos/macaron-praline.jpg | https://www.mondedumacaron.fr/media/catalog/product/p/r/pralin_.jpg | Praliné |
 | assets/photos/macaron-praline-grenadine.jpg | https://www.mondedumacaron.fr/media/catalog/product/p/r/praline_rose_grenadine.jpg | Praline rose grenadine |
 | assets/photos/macaron-rhum-raisin.jpg | https://www.mondedumacaron.fr/media/catalog/product/r/h/rhum_raisin.jpg | Rhum raisin |
-| assets/photos/macaron-rose.jpg | https://www.mondedumacaron.fr/media/catalog/product/placeholder/default/imge-remplacement_1.jpg | Rose |
+| assets/photos/macaron-rose.jpg | https://www.mondedumacaron.fr/media/catalog/product/placeholder/default/imge-remplacement_1.jpg | Rose — **image générique (logo du réseau), non affichée : photo à fournir** |
 | assets/photos/macaron-speculoos.jpg | https://www.mondedumacaron.fr/media/catalog/product/s/p/speculoos.jpg | Spéculoos |
 | assets/photos/macaron-tarte-aux-fraises.jpg | https://www.mondedumacaron.fr/media/catalog/product/t/a/tarte_aux_fraises.jpg | Tarte aux fraises |
 | assets/photos/macaron-tarte-citron.jpg | https://www.mondedumacaron.fr/media/catalog/product/t/a/tarte_citron.jpg | Tarte au citron |

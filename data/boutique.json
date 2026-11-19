@@ -48,12 +48,40 @@
   },
   "site_url": "https://le-monde-du-macaron-villefranche.pages.dev",
   "_note_site_url": "Adresse provisoire Cloudflare Pages. À changer si vous prenez un nom de domaine (ex. lemondedumacaron-villefranche.fr).",
-  "objets_mail": {
-    "conscrits": "Demande de devis – Conscrits",
-    "mariage": "Demande de devis – Mariage",
-    "entreprise": "Demande de devis – Commande d'entreprise",
-    "general": "Demande d'information"
+  "textes": {
+    "accroche": "Des macarons aux mille couleurs, rue Nationale.",
+    "intro_accueil": "Sucrés, salés ou fruités, nos macarons se choisissent à l'unité ou en coffret. Pour un cadeau, une fête ou une simple pause gourmande, on vous attend au cœur de Villefranche.",
+    "intro_macarons": "Touchez une carte pour la retourner : la liste des allergènes est au dos. En cas de doute, demandez conseil en boutique.",
+    "aussi_en_boutique": "Le réseau Le Monde du Macaron propose aussi des nougats et des chocolats : renseignez-vous en boutique.",
+    "intro_coffrets": "Un baptême, une classe en fête, un mariage ou un cadeau pour vos clients : nous composons avec vous des coffrets de macarons à la couleur de votre événement, selon vos envies et votre budget."
   },
+  "objet_mail_general": "Demande d'information",
+  "evenements": [
+    {
+      "id": "conscrits",
+      "titre": "Conscrits",
+      "sous_titre": "La fête de Villefranche",
+      "texte": "Pour la classe en fête, des macarons aux couleurs de votre décennie : à partager pendant le défilé ou à offrir aux familles.",
+      "photos": ["macaron-framboise", "macaron-pistache", "macaron-citron"],
+      "objet_mail": "Demande de devis – Conscrits"
+    },
+    {
+      "id": "mariages",
+      "titre": "Mariages",
+      "sous_titre": "Le grand jour, en douceur",
+      "texte": "Cadeaux pour les invités, buffet de desserts ou douceurs pour le vin d’honneur : choisissez vos parfums et vos couleurs, on en parle ensemble.",
+      "photos": ["macaron-framboise-litchi-rose", "macaron-vanille", "macaron-chocolat-blanc"],
+      "objet_mail": "Demande de devis – Mariage"
+    },
+    {
+      "id": "entreprises",
+      "titre": "Entreprises",
+      "sous_titre": "Cadeaux clients et séminaires",
+      "texte": "Coffrets pour vos clients, pause gourmande pour vos équipes ou plateau pour un séminaire : dites-nous la quantité et la date, on s'occupe de la gourmandise.",
+      "photos": ["macaron-cafe", "macaron-caramel-beurre-sale", "macaron-chocolat"],
+      "objet_mail": "Demande de devis – Commande d'entreprise"
+    }
+  ],
   "mentions_legales": {
     "raison_sociale": "[À REMPLACER]",
     "forme_juridique": "[À REMPLACER]",

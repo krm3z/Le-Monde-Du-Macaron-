@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+import Horaires from '../components/Horaires.astro';
+import Val from '../components/Val.astro';
+import { boutique, telHref, mailHref, noteFr, adresseLigne } from '../lib/site.js';
+const { latitude: lat, longitude: lon } = boutique.geo;
+const d = 0.0035;
+const osm = `https://www.openstreetmap.org/export/embed.html?bbox=${lon - d * 1.6}%2C${lat - d}%2C${lon + d * 1.6}%2C${lat + d}&layer=mapnik&marker=${lat}%2C${lon}`;
+const osmLien = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=18/${lat}/${lon}`;
+const g = boutique.google;
+const etoiles = Math.round(g.note);
+---
+<Base
+  page="boutique"
+  title="La boutique : adresse, horaires, plan"
+  description={`${boutique.nom}, ${adresseLigne}. Horaires d'ouverture, plan, itinéraire et téléphone : ${boutique.telephone}.`}
+>
+  <header class="page-head wrap">
+    <p class="eyebrow" data-reveal>Nous trouver</p>
+    <h1 class="h-display" data-reveal>La <em>boutique</em></h1>
+    <p class="lead" data-reveal>Une boutique et un salon de thé en plein centre de Villefranche, sur la rue Nationale.</p>
+  </header>
+
+  <section class="wrap shop" style="padding-bottom:clamp(4rem,10vw,8rem)">
+    <div class="shop__side">
+      <div class="shop__card" data-reveal>
+        <h2>Adresse</h2>
+        <address class="shop__adresse">{boutique.adresse.rue}<br />{boutique.adresse.code_postal} {boutique.adresse.ville}</address>
+        <div class="btns">
+          <a class="btn" href={g.lien_itineraire} rel="noopener" target="_blank">Itinéraire<span class="sr-only"> (nouvel onglet)</span></a>
+          <a class="btn btn--ghost" href={telHref}>Appeler</a>
+        </div>
+        <p style="margin:1.4rem 0 0">Tél. <a href={telHref}>{boutique.telephone}</a><br />E-mail : <Val v={boutique.email} /></p>
+      </div>
+      <div class="shop__card" data-reveal>
+        <h2>Horaires</h2>
+        <Horaires />
+      </div>
+    </div>
+    <div style="display:grid;gap:1.5rem">
+      <div class="rating" data-reveal>
+        <span class="rating__note">{noteFr(g.note)}</span>
+        <span class="rating__stars" aria-hidden="true">{'★'.repeat(etoiles)}{'☆'.repeat(5 - etoiles)}</span>
+        <span class="rating__count">sur 5 · <strong data-count-to={g.nombre_avis}>{g.nombre_avis}</strong> avis Google</span>
+        <small>Relevé le {new Date(g.date_releve).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })} · <a href={g.lien_fiche} rel="noopener" target="_blank">Voir les avis<span class="sr-only"> (nouvel onglet)</span></a></small>
+      </div>
+      <div class="map" data-map>
+        <iframe title={`Plan OpenStreetMap : ${boutique.nom}, ${adresseLigne}`} src={osm} loading="lazy" referrerpolicy="no-referrer"></iframe>
+        <a class="map__credit" href={osmLien} rel="noopener" target="_blank">Agrandir le plan · © OpenStreetMap<span class="sr-only"> (nouvel onglet)</span></a>
+      </div>
+      <p style="font-size:.9rem;color:var(--choco-doux)">Pour une commande ou une question : <a href={mailHref()}>écrivez-nous</a> ou appelez-nous.</p>
+    </div>
+  </section>
+</Base>

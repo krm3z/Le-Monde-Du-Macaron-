@@ -1,0 +1,41 @@
+---
+import { telHref } from '../lib/site.js';
+const { page } = Astro.props;
+const liens = [
+  { href: '/nos-macarons/', label: 'Nos macarons', id: 'macarons' },
+  { href: '/coffrets-evenements/', label: 'Coffrets & événements', id: 'coffrets' },
+  { href: '/la-boutique/', label: 'La boutique', id: 'boutique' },
+];
+---
+<header class="nav" data-nav>
+  <div class="nav__pill">
+    <a class="nav__logo" href="/" aria-label="Le Monde du Macaron, accueil">
+      <svg class="nav__mark" viewBox="0 0 32 32" aria-hidden="true"><use href="#macaron-mark" /></svg>
+      <span>Le Monde <em>du</em> Macaron</span>
+    </a>
+    <nav class="nav__links" aria-label="Navigation principale">
+      {liens.map((l) => <a href={l.href} aria-current={page === l.id ? 'page' : undefined}>{l.label}</a>)}
+    </nav>
+    <a class="btn btn--small nav__call" href={telHref}>Appeler</a>
+    <button class="nav__burger" type="button" aria-expanded="false" aria-controls="menu-mobile" data-menu-toggle>
+      <span class="nav__burger-label">Menu</span>
+      <span class="nav__burger-lines" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+  <div class="menu" id="menu-mobile" data-menu hidden>
+    <nav aria-label="Menu mobile">
+      <ul>
+        <li><a href="/" aria-current={page === 'accueil' ? 'page' : undefined}><span>01</span>Accueil</a></li>
+        {liens.map((l, i) => <li><a href={l.href} aria-current={page === l.id ? 'page' : undefined}><span>0{i + 2}</span>{l.label}</a></li>)}
+      </ul>
+    </nav>
+    <a class="btn menu__call" href={telHref}>Appeler la boutique</a>
+  </div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="macaron-mark" viewBox="0 0 32 32">
+      <path d="M4 13.5C4 8.8 9.4 6 16 6s12 2.8 12 7.5c0 .8-.6 1.3-1.4 1.3H5.4c-.8 0-1.4-.5-1.4-1.3Z" fill="#C98C88"/>
+      <rect x="5" y="15.4" width="22" height="3" rx="1.5" fill="#646B3F"/>
+      <path d="M4 20.5c0-.8.6-1.3 1.4-1.3h21.2c.8 0 1.4.5 1.4 1.3C28 24.6 22.6 27 16 27S4 24.6 4 20.5Z" fill="#C98C88"/>
+    </symbol>
+  </svg>
+</header>

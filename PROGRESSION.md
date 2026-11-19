@@ -15,11 +15,11 @@
 - [x] Commit « Collecte du contenu »
 
 ## Étape 2 — Construction
-- [ ] Projet Astro statique, polices locales, GSAP/ScrollTrigger/Lenis
-- [ ] Pages : accueil, macarons, coffrets & événements, boutique, mentions légales, 404
-- [ ] SEO : titles, descriptions, schema.org, OG, sitemap, robots, favicon
-- [ ] A-REMPLACER.md
-- [ ] Commit « Construction du site »
+- [x] Projet Astro statique, polices locales, GSAP/ScrollTrigger/Lenis
+- [x] Pages : accueil, macarons, coffrets & événements, boutique, mentions légales, 404
+- [x] SEO : titles, descriptions, schema.org, OG, sitemap, robots, favicon
+- [x] A-REMPLACER.md
+- [x] Commit « Construction du site »
 
 ## Étape 3 — Vérification
 - [ ] Build + serveur local
@@ -38,3 +38,4 @@
 ## Journal (une ligne par action)
 - Création du suivi. Node.js manquant : décision → Node portable dans `.tools/` (voir RAPPORT.md).
 - Étape 1 finie : 94 produits (79 macarons + 15 calissons), 102 photos, 8 macarons détourés, boutique.json avec sources.
+- Étape 2 finie : Astro 7 statique, 6 pages + sitemap/robots, animations GSAP/Lenis, menu, filtre, cartes testés. Photos Litchi/Rose = logo du réseau → retirées.

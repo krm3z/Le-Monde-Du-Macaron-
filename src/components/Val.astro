@@ -1,0 +1,6 @@
+---
+// Affiche une valeur ; si elle n'est pas encore remplie, la surligne pour qu'on la repère.
+import { isTodo } from '../lib/site.js';
+const { v } = Astro.props;
+---
+{isTodo(v) ? <mark class="todo">{v || '[À REMPLACER]'}</mark> : <Fragment>{v}</Fragment>}

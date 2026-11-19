@@ -1,0 +1,155 @@
+---
+import Base from '../layouts/Base.astro';
+import Img from '../components/Img.astro';
+import Horaires from '../components/Horaires.astro';
+import { boutique, produits, photo, telHref, noteFr, nbProduits, adresseLigne } from '../lib/site.js';
+
+// Macarons détourés de l'animation d'entrée : position mobile (x, y, largeur) puis ordinateur.
+const heroMacs = [
+  { id: 'framboise',      m: [22, 16, 112], d: [13, 26, 200], r: -12 },
+  { id: 'pistache',       m: [76, 13, 96],  d: [85, 22, 175], r: 9 },
+  { id: 'citron',         m: [52, 25, 120], d: [9, 70, 150],  r: -6 },
+  { id: 'myrtille',       m: [9, 29, 74],   d: [90, 70, 200], r: 14 },
+  { id: 'chocolat',       m: [90, 28, 82],  d: [29, 86, 128], r: -18 },
+  { id: 'mangue-passion', m: [42, 7, 58],   d: [70, 87, 150], r: 6 },
+  { id: 'violette',       m: [92, 97, 72],  d: [36, 13, 108], r: 20 },
+  { id: 'vanille',        m: [8, 97, 66],   d: [63, 12, 118], r: -10 },
+].filter((m) => photo(`detoure/macaron-${m.id}-seul`));
+
+const selection = produits.filter((p) => p.mis_en_avant).slice(0, 8);
+const bandeau = produits.filter((p) => p.famille === 'macaron' && p.photo).filter((_, i) => i % 6 === 0).slice(0, 9);
+const g = boutique.google;
+---
+<Base
+  page="accueil"
+  title={`${boutique.nom} Villefranche-sur-Saône · Macarons, coffrets et salon de thé`}
+  description={`Macarons sucrés et salés, coffrets cadeaux et commandes pour conscrits, mariages et entreprises. ${adresseLigne}. ${boutique.telephone}.`}
+>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__stage" aria-hidden="true">
+      {heroMacs.map((m, i) => {
+        const p = photo(`detoure/macaron-${m.id}-seul`).sizes[0];
+        return (
+          <div class="hero__mac" data-hero-mac style={`--x:${m.m[0]}%;--y:${m.m[1]}%;--w:${m.m[2]}px;--xd:${m.d[0]}%;--yd:${m.d[1]}%;--wd:${m.d[2]}px;--r:${m.r}deg`}>
+            <img src={p.src} width={p.w} height={p.h} alt="" fetchpriority={i < 3 ? 'high' : undefined} decoding="async" />
+          </div>
+        );
+      })}
+    </div>
+    <div class="hero__content">
+      <p class="hero__kicker" data-hero-fade>Villefranche-sur-Saône · rue Nationale</p>
+      <h1 class="hero__title" id="hero-title">
+        <span class="line"><span>Le Monde</span></span>
+        <span class="line"><span><em>du</em> Macaron</span></span>
+      </h1>
+      <p class="hero__sub" data-hero-fade>{boutique.textes.accroche}</p>
+      <div class="btns" data-hero-fade>
+        <a class="btn" href="/nos-macarons/">Découvrir les macarons</a>
+        <a class="btn btn--ghost" href="/la-boutique/">Venir en boutique</a>
+      </div>
+      <a class="hero__badge" href={g.lien_fiche} rel="noopener" target="_blank" data-hero-fade>
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <span><strong>{noteFr(g.note)}/5</strong> · {g.nombre_avis} avis Google<span class="sr-only"> (nouvel onglet)</span></span>
+      </a>
+    </div>
+  </section>
+
+  <div class="marquee" data-marquee aria-label="Quelques parfums">
+    <div class="marquee__track">
+      {[0, 1].map((k) => (
+        <div class="marquee__group" aria-hidden={k === 1 ? 'true' : undefined}>
+          {bandeau.map((p) => (
+            <span class="marquee__item">
+              <Img name={p.photo} alt={k ? '' : `Macaron ${p.nom}`} sizes="110px" />
+              {p.nom}
+              <span class="marquee__dot" aria-hidden="true"></span>
+            </span>
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap intro">
+      <div data-reveal>
+        <p class="eyebrow">La maison</p>
+        <h2 class="h-section">Une vitrine de couleurs, <em>au cœur de la ville</em></h2>
+      </div>
+      <div data-reveal>
+        <p class="lead">{boutique.textes.intro_accueil}</p>
+        <div class="intro__chiffres">
+          <div><strong>{nbProduits('sucré')}</strong><span>parfums sucrés</span></div>
+          <div><strong>{nbProduits('salé')}</strong><span>recettes salées</span></div>
+          <div><strong>{nbProduits('autre')}</strong><span>calissons</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--beige" aria-labelledby="sel-title">
+    <div class="wrap">
+      <div class="selection__head" data-reveal>
+        <div>
+          <p class="eyebrow">Sélection</p>
+          <h2 class="h-section" id="sel-title">Nos incontournables</h2>
+        </div>
+        <a class="link-arrow" href="/nos-macarons/">Voir tous les parfums <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="selection">
+        {selection.map((p) => (
+          <a class="pick" href={`/nos-macarons/#${p.id}`} data-reveal>
+            <div class="pick__img"><Img name={p.photo} alt={`Macarons ${p.nom}`} sizes="(min-width: 900px) 25vw, 45vw" /></div>
+            <span class="pick__name">{p.nom}<small>{p.categorie}</small></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="coffrets-title">
+    <div class="wrap">
+      <div data-reveal>
+        <p class="eyebrow">Coffrets &amp; événements</p>
+        <h2 class="h-section" id="coffrets-title">Une occasion <em>à fêter&nbsp;?</em></h2>
+        <p class="lead" style="margin-top:1.2rem">{boutique.textes.intro_coffrets}</p>
+      </div>
+      <div class="events">
+        {boutique.evenements.map((e) => (
+          <a class="event-card" href={`/coffrets-evenements/#${e.id}`} data-reveal>
+            <div><h3>{e.titre}</h3><p>{e.sous_titre}</p></div>
+            <div class="event-card__img"><Img name={e.photos[0]} alt="" sizes="140px" /></div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0" aria-labelledby="visit-title">
+    <div class="wrap">
+      <div class="visit" data-reveal>
+        <div>
+          <p class="eyebrow">Venir en boutique</p>
+          <h2 class="h-section" id="visit-title">On vous attend <em>rue Nationale</em></h2>
+          <address style="margin:1.5rem 0;font-size:1.15rem">{boutique.adresse.rue}<br />{boutique.adresse.code_postal} {boutique.adresse.ville}</address>
+          <div class="btns">
+            <a class="btn" href={g.lien_itineraire} rel="noopener" target="_blank">Itinéraire<span class="sr-only"> (nouvel onglet)</span></a>
+            <a class="btn btn--ghost" href={telHref}>Appeler · {boutique.telephone}</a>
+          </div>
+        </div>
+        <div>
+          <Horaires />
+        </div>
+        {photo('detoure/macaron-framboise-seul') && (
+          <img class="visit__deco" src={photo('detoure/macaron-framboise-seul').sizes[0].src} width={photo('detoure/macaron-framboise-seul').sizes[0].w} height={photo('detoure/macaron-framboise-seul').sizes[0].h} alt="" loading="lazy" decoding="async" />
+        )}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style is:global>
+  @media (min-width: 900px) {
+    .hero__mac { left: var(--xd); top: var(--yd); width: var(--wd); }
+  }
+</style>

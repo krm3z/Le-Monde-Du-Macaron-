@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+import Img from '../components/Img.astro';
+import Val from '../components/Val.astro';
+import { boutique, produits, nbProduits } from '../lib/site.js';
+
+const filtres = [
+  { id: 'tout', label: 'Tout', n: produits.length },
+  { id: 'sucré', label: 'Sucré', n: nbProduits('sucré') },
+  { id: 'salé', label: 'Salé', n: nbProduits('salé') },
+  { id: 'coffret', label: 'Coffrets', n: nbProduits('coffret') },
+  { id: 'autre', label: 'Calissons', n: nbProduits('autre') },
+].filter((f) => f.n > 0);
+const etiquette = { 'sucré': 'Macaron sucré', 'salé': 'Macaron salé', coffret: 'Coffret', autre: 'Calisson' };
+---
+<Base
+  page="macarons"
+  title="Nos macarons sucrés et salés"
+  description={`${nbProduits('sucré')} macarons sucrés, ${nbProduits('salé')} macarons salés et des calissons à Villefranche-sur-Saône. Parfums, descriptions et allergènes.`}
+>
+  <header class="page-head wrap">
+    <p class="eyebrow" data-reveal>La carte</p>
+    <h1 class="h-display" data-reveal>Nos <em>macarons</em></h1>
+    <p class="lead" data-reveal>{boutique.textes.intro_macarons}</p>
+  </header>
+
+  <section class="wrap" style="padding-bottom:clamp(4rem,10vw,8rem)" aria-label="Liste des produits">
+    <div class="filters" role="group" aria-label="Filtrer les produits" data-filters>
+      {filtres.map((f, i) => (
+        <button type="button" data-filter={f.id} aria-pressed={i === 0 ? 'true' : 'false'}>{f.label}<sup>{f.n}</sup></button>
+      ))}
+    </div>
+    <p class="count" aria-live="polite" data-count>{produits.length} produits affichés</p>
+
+    <ul class="grid" role="list" data-grid style="list-style:none;margin:0;padding:0">
+      {produits.map((p) => (
+        <li class="card" id={p.id} data-cat={p.categorie}>
+          <button class="card__btn" type="button" aria-pressed="false" data-flip>
+            <span class="card__face card__front">
+              <span class="card__img"><Img name={p.photo} alt={`${p.famille === 'macaron' ? 'Macarons' : ''} ${p.nom}`.trim()} sizes="(min-width: 1200px) 25vw, (min-width: 600px) 45vw, 90vw" /></span>
+              <span class="card__body">
+                <span class="card__tag">{etiquette[p.categorie]}</span>
+                <span class="card__name">{p.nom}</span>
+                <span class="card__hint">Allergènes au dos</span>
+              </span>
+            </span>
+            <span class="card__face card__back" aria-hidden="true">
+              <span>
+                <span class="card__label">{p.nom}</span>
+                <span style="display:block;margin-bottom:1.2rem">{p.description}</span>
+                <span class="card__label">Allergènes</span>
+                <span class="card__allergenes"><Val v={p.allergenes} /></span>
+              </span>
+              <span>
+                {p.prix && <span style="display:block;font:500 1.3rem var(--serif);margin-bottom:.4rem">{p.prix}</span>}
+                <small>Un doute ? Demandez conseil en boutique.</small>
+              </span>
+            </span>
+          </button>
+        </li>
+      ))}
+    </ul>
+
+    <p class="aussi" data-reveal>{boutique.textes.aussi_en_boutique}</p>
+  </section>
+</Base>
