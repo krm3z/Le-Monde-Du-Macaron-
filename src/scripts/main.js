@@ -61,8 +61,8 @@ $$(`[data-horaires] [data-jour="${code}"]`).forEach((l) => l.classList.add('is-t
 
 /* ---------- Apparitions douces au défilement ---------- */
 $$('[data-reveal]').forEach((el) => {
-  gsap.fromTo(el, { opacity: 0, y: reduce ? 0 : 36 }, {
-    opacity: 1, y: 0, duration: reduce ? 0.6 : 1.1, ease: 'power3.out',
+  gsap.fromTo(el, { opacity: 0, y: reduce ? 0 : 14 }, {
+    opacity: 1, y: 0, duration: 0.7, ease: 'power2.out',
     scrollTrigger: { trigger: el, start: 'top 90%', once: true },
   });
 });
@@ -70,26 +70,16 @@ $$('[data-reveal]').forEach((el) => {
 /* ---------- Accueil : les macarons tombent et se posent, puis le nom apparaît ---------- */
 const macs = $$('[data-hero-mac] img');
 if (macs.length) {
-  const lines = $$('.hero__title .line > span');
+  const lines = [];
   const fades = $$('[data-hero-fade]');
   gsap.set($$('[data-hero-mac]'), { opacity: 1 });
   if (reduce) {
     gsap.fromTo([...macs, ...lines, ...fades], { opacity: 0 }, { opacity: 1, duration: 0.8, stagger: 0.04 });
   } else {
-    const tl = gsap.timeline({ delay: 0.1 });
-    tl.from(macs, {
-      y: () => -(window.innerHeight * 0.9 + 200), rotation: () => gsap.utils.random(-70, 70),
-      duration: 0.85, ease: 'power2.in', stagger: 0.13,
-    })
-      .to(macs, { keyframes: [{ scaleY: 0.86, scaleX: 1.08, duration: 0.09 }, { scaleY: 1, scaleX: 1, duration: 0.45, ease: 'elastic.out(1, 0.45)' }], stagger: 0.13, transformOrigin: '50% 100%' }, 0.85)
-      .fromTo(lines, { yPercent: 110, opacity: 1 }, { yPercent: 0, opacity: 1, duration: 1.1, stagger: 0.12, ease: 'expo.out' }, '-=0.55')
-      .fromTo(fades, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.08, ease: 'power2.out' }, '-=0.7')
-      .from($$('[data-hero-rise]'), { y: 24, duration: 0.9, ease: 'power3.out' }, '<0.1');
-    // léger relief au défilement
-    macs.forEach((m, i) => gsap.to(m, {
-      yPercent: -40 - (i % 3) * 35, ease: 'none',
-      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
-    }));
+    // les macarons se posent un par un dans la vitrine, puis le nom apparaît
+    gsap.timeline({ delay: 0.15 })
+      .fromTo(macs, { opacity: 0, y: -28 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', stagger: 0.09 })
+      .fromTo(fades, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', stagger: 0.1 }, '-=0.2');
   }
 }
 
@@ -201,6 +191,6 @@ if (map) {
 
 /* ---------- 404 : le macaron roule ---------- */
 const lost = $('[data-lost]');
-if (lost && !reduce) gsap.fromTo(lost, { rotation: -14 }, { rotation: 14, duration: 1.6, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+if (lost && !reduce) gsap.fromTo(lost, { rotation: -6 }, { rotation: 6, duration: 2.4, ease: 'sine.inOut', yoyo: true, repeat: -1 });
 
 window.addEventListener('load', () => ScrollTrigger.refresh());

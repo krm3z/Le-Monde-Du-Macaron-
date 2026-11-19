@@ -4,16 +4,16 @@ import { photo } from '../lib/site.js';
 const mac = photo('detoure/macaron-pistache-seul')?.sizes[0];
 ---
 <Base page="404" title="Page introuvable" description="Cette page n'existe pas ou plus." noindex>
-  <section class="lost">
+  <section class="lost wrap">
     <div>
       <p class="lost__num"><span class="sr-only">Erreur 404</span>
         <span aria-hidden="true">4</span>
         {mac ? <img src={mac.src} width={mac.w} height={mac.h} alt="" data-lost /> : <span aria-hidden="true">0</span>}
         <span aria-hidden="true">4</span>
       </p>
-      <h1 class="h-section">Ce macaron s’est échappé de la vitrine</h1>
-      <p>La page que vous cherchez n’existe pas ou a changé d’adresse. Les autres vous attendent sagement.</p>
-      <div class="btns" style="justify-content:center">
+      <h1 class="h-section">Page introuvable</h1>
+      <p>Cette page n’existe pas ou a changé d’adresse.</p>
+      <div class="btns">
         <a class="btn" href="/">Retour à l’accueil</a>
         <a class="btn btn--ghost" href="/nos-macarons/">Voir les macarons</a>
       </div>

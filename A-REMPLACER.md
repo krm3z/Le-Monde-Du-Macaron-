@@ -4,7 +4,6 @@ Sur le site, chaque valeur manquante s'affiche **surlignée en jaune** (`[À REM
 
 | # | À remplir | Où ça s'affiche | Fichier à modifier | Ce que j'ai trouvé |
 |---|---|---|---|---|
-| 1 | **Heure d'ouverture** du lundi au samedi (format `08:30`) | Pied de page (toutes les pages), Accueil, La boutique | `data/boutique.json` → `horaires` → `ouverture` | Sources contradictoires : Google 8h00 en semaine et 8h30 le samedi ; Instagram 8h ; site du réseau 8h30. Fermeture 19h et dimanche fermé : sûrs. |
 | 2 | **E-mail de la boutique** | La boutique, Coffrets & événements (bouton « Envoyer un mail »), Mentions légales | `data/boutique.json` → `email` | Introuvable. Tant qu'il manque, le bouton ouvre la messagerie avec l'objet pré-rempli mais sans destinataire. |
 | 3 | **Allergènes** de chaque produit | Nos macarons (dos des cartes) | `data/produits.json` → `allergenes` (94 produits) | Le réseau n'affiche aucun allergène. À recopier depuis la fiche allergènes de la boutique. |
 | 4 | Prix (facultatif) | Nos macarons (dos des cartes) | `data/produits.json` → `prix` (ex. `"1,90 €"`) | Aucun prix sur le site du réseau. Laisser `null` pour ne rien afficher. |

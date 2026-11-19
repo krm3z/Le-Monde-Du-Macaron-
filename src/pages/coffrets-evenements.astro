@@ -38,7 +38,7 @@ const mailManquant = isTodo(boutique.email);
     {boutique.evenements.map((e, i) => (
       <section class="ev" id={e.id} aria-labelledby={`ev-${e.id}`}>
         <div data-reveal>
-          <span class="ev__num">0{i + 1}</span>
+          
           <h2 id={`ev-${e.id}`}>{e.titre}</h2>
           <p class="ev__sub">{e.sous_titre}</p>
           <p class="lead">{e.texte}</p>

@@ -22,15 +22,49 @@
   "email": "[À REMPLACER]",
   "_note_email": "Aucune adresse e-mail propre à la boutique trouvée. Le réseau affiche contact@mondedumacaron.com (adresse du siège, pas de la boutique) : non utilisée.",
   "horaires": [
-    { "jour": "Lundi",    "code": "Mo", "ouverture": "[À REMPLACER]", "fermeture": "19:00" },
-    { "jour": "Mardi",    "code": "Tu", "ouverture": "[À REMPLACER]", "fermeture": "19:00" },
-    { "jour": "Mercredi", "code": "We", "ouverture": "[À REMPLACER]", "fermeture": "19:00" },
-    { "jour": "Jeudi",    "code": "Th", "ouverture": "[À REMPLACER]", "fermeture": "19:00" },
-    { "jour": "Vendredi", "code": "Fr", "ouverture": "[À REMPLACER]", "fermeture": "19:00" },
-    { "jour": "Samedi",   "code": "Sa", "ouverture": "[À REMPLACER]", "fermeture": "19:00" },
-    { "jour": "Dimanche", "code": "Su", "ferme": true }
+    {
+      "jour": "Lundi",
+      "code": "Mo",
+      "ouverture": "08:00",
+      "fermeture": "19:00"
+    },
+    {
+      "jour": "Mardi",
+      "code": "Tu",
+      "ouverture": "08:00",
+      "fermeture": "19:00"
+    },
+    {
+      "jour": "Mercredi",
+      "code": "We",
+      "ouverture": "08:00",
+      "fermeture": "19:00"
+    },
+    {
+      "jour": "Jeudi",
+      "code": "Th",
+      "ouverture": "08:00",
+      "fermeture": "19:00"
+    },
+    {
+      "jour": "Vendredi",
+      "code": "Fr",
+      "ouverture": "08:00",
+      "fermeture": "19:00"
+    },
+    {
+      "jour": "Samedi",
+      "code": "Sa",
+      "ouverture": "08:00",
+      "fermeture": "19:00"
+    },
+    {
+      "jour": "Dimanche",
+      "code": "Su",
+      "ferme": true
+    }
   ],
-  "_note_horaires": "Sources contradictoires sur l'heure d'ouverture (format HH:MM, ex. 08:30). Google Maps (consulté le 19/11/2026) : lun-ven 08:00-19:00, sam 08:30-19:00, dim fermé. Instagram (bio) : lundi au samedi 8h-19h. mondedumacaron.fr (page Villefranche) : lun-sam 8h30-19h, dim fermé. Fermeture 19:00 et dimanche fermé : concordants.",
+  "_note_horaires": "Ouverture 8h00 du lundi au samedi, confirmée par Kerem le 19/11/2026 (Google indiquait 8h30 le samedi, le site du réseau 8h30 : informations anciennes). Fermeture 19h00, dimanche fermé.",
   "reseaux": {
     "instagram": "https://www.instagram.com/lemondedumacaron.69400/",
     "instagram_pseudo": "@lemondedumacaron.69400",
@@ -49,28 +83,36 @@
   "site_url": "https://le-monde-du-macaron-villefranche.pages.dev",
   "_note_site_url": "Adresse provisoire Cloudflare Pages. À changer si vous prenez un nom de domaine (ex. lemondedumacaron-villefranche.fr).",
   "textes": {
-    "accroche": "Des macarons aux mille couleurs, rue Nationale.",
-    "intro_accueil": "Sucrés, salés ou fruités, nos macarons se choisissent à l'unité ou en coffret. Pour un cadeau, une fête ou une simple pause gourmande, on vous attend au cœur de Villefranche.",
-    "intro_macarons": "Touchez une carte pour la retourner : la liste des allergènes est au dos. En cas de doute, demandez conseil en boutique.",
+    "accroche": "Macarons sucrés et salés, calissons et coffrets à offrir. À l'unité, en boîte ou sur commande pour vos fêtes.",
+    "intro_accueil": "Un aperçu de la carte. Tous les parfums, avec leurs allergènes, sont sur la page Nos macarons.",
+    "intro_macarons": "Touchez une carte, ou sélectionnez-la au clavier, pour voir la description et les allergènes. En cas d'allergie, demandez conseil en boutique.",
     "aussi_en_boutique": "Le réseau Le Monde du Macaron propose aussi des nougats et des chocolats : renseignez-vous en boutique.",
-    "intro_coffrets": "Un baptême, une classe en fête, un mariage ou un cadeau pour vos clients : nous composons avec vous des coffrets de macarons à la couleur de votre événement, selon vos envies et votre budget."
+    "intro_coffrets": "Pour les conscrits, un mariage ou des cadeaux d'entreprise, nous préparons des coffrets de macarons selon vos parfums, vos couleurs et votre budget."
   },
   "objet_mail_general": "Demande d'information",
   "evenements": [
     {
       "id": "conscrits",
       "titre": "Conscrits",
-      "sous_titre": "La fête de Villefranche",
+      "sous_titre": "La fête des classes de Villefranche",
       "texte": "Pour la classe en fête, des macarons aux couleurs de votre décennie : à partager pendant le défilé ou à offrir aux familles.",
-      "photos": ["macaron-framboise", "macaron-pistache", "macaron-citron"],
+      "photos": [
+        "macaron-framboise",
+        "macaron-pistache",
+        "macaron-citron"
+      ],
       "objet_mail": "Demande de devis – Conscrits"
     },
     {
       "id": "mariages",
       "titre": "Mariages",
-      "sous_titre": "Le grand jour, en douceur",
+      "sous_titre": "Cadeaux d'invités et desserts",
       "texte": "Cadeaux pour les invités, buffet de desserts ou douceurs pour le vin d’honneur : choisissez vos parfums et vos couleurs, on en parle ensemble.",
-      "photos": ["macaron-framboise-litchi-rose", "macaron-vanille", "macaron-chocolat-blanc"],
+      "photos": [
+        "macaron-framboise-litchi-rose",
+        "macaron-vanille",
+        "macaron-chocolat-blanc"
+      ],
       "objet_mail": "Demande de devis – Mariage"
     },
     {
@@ -78,7 +120,11 @@
       "titre": "Entreprises",
       "sous_titre": "Cadeaux clients et séminaires",
       "texte": "Coffrets pour vos clients, pause gourmande pour vos équipes ou plateau pour un séminaire : dites-nous la quantité et la date, on s'occupe de la gourmandise.",
-      "photos": ["macaron-cafe", "macaron-caramel-beurre-sale", "macaron-chocolat"],
+      "photos": [
+        "macaron-cafe",
+        "macaron-caramel-beurre-sale",
+        "macaron-chocolat"
+      ],
       "objet_mail": "Demande de devis – Commande d'entreprise"
     }
   ],

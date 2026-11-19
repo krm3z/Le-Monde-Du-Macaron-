@@ -3,13 +3,14 @@
 ## 1. Résumé en 5 lignes
 - Le site est **construit, testé et prêt à être mis en ligne** sur Cloudflare Pages (100 % statique).
 - 6 pages : Accueil, Nos macarons (94 produits), Coffrets & événements, La boutique, Mentions légales, 404.
-- Lighthouse mobile : performance 92 à 100, accessibilité / bonnes pratiques / SEO à 100.
-- **Il manque** : l'heure d'ouverture (sources contradictoires), l'e-mail de la boutique, les allergènes (le réseau n'en publie aucun), les infos légales de la société.
+- Lighthouse mobile : 96 à 100 partout (performance, accessibilité, bonnes pratiques, SEO).
+- Horaires confirmés : lundi au samedi 8h – 19h, fermé le dimanche.
+- **Il manque** : l'e-mail de la boutique, les allergènes (le réseau n'en publie aucun), les infos légales de la société.
 - **Avant la mise en ligne** : obtenir l'accord du réseau pour les photos, et remplir `A-REMPLACER.md`.
 
 ## 2. Ce qui est fait, page par page
 - **Partout** : menu en pilule flottante (plein écran sur téléphone), pied de page chocolat avec adresse, horaires, Instagram, TikTok, mentions légales et « Site créé par Kerem Uysal ». Défilement fluide (Lenis), apparitions douces, transitions entre pages. Aucun cookie, aucun suivi, polices hébergées sur le site.
-- **Accueil** : 8 macarons détourés tombent un par un et se posent, puis « Le Monde du Macaron » apparaît. Bandeau de macarons qui défile et ralentit au survol / toucher. Chiffres clés, 8 incontournables, 3 cartes événements, bloc « Venir en boutique » (itinéraire, appel, horaires). Note Google 4,6 (719 avis).
+- **Accueil** : dès le premier écran, le nom, une phrase claire et les infos pratiques (horaires, adresse, téléphone), plus les boutons « Voir les macarons » et « Itinéraire ». À côté, une petite vitrine : 8 macarons détourés s'y posent un par un, puis le nom apparaît. Bandeau de macarons qui défile et ralentit au survol / toucher. Une sélection de parfums, les coffrets (Conscrits, Mariages, Entreprises), le bloc « Venir à la boutique ». Note Google 4,6 (719 avis).
 - **Nos macarons** : 94 cartes (68 sucrés, 11 salés, 15 calissons). Filtre Tout / Sucré / Salé / Calissons avec cartes qui glissent. Chaque carte se retourne au toucher ou au clavier (Entrée / Espace) : description + allergènes au dos.
 - **Coffrets & événements** : le texte de présentation se remplit du vieux rose au chocolat en défilant, deux rangées de photos glissent sur le côté. Conscrits, Mariages, Entreprises avec boutons « Appeler » et « Envoyer un mail » (objet pré-rempli).
 - **La boutique** : adresse, horaires (le jour actuel est signalé), boutons Itinéraire / Appeler, note Google avec compteur animé jusqu'à 719, plan OpenStreetMap qui apparaît en fondu au clic.
@@ -19,6 +20,7 @@
 - **Accessibilité** : textes alternatifs, lien « Aller au contenu », navigation clavier, contrastes vérifiés, mode « mouvement réduit » (tout devient de simples fondus, rien ne bouge).
 
 ## 3. Décisions prises seul
+- **Refonte « plus sérieuse »** (à ta demande) : même palette et mêmes polices, mais mise en page alignée à gauche, titres sobres sans italiques décoratives, plus de numéros « 01 / 02 / 03 », angles discrets au lieu des grandes cartes arrondies, héros à la taille du contenu au lieu d'un plein écran, textes plus directs. Une seule animation d'entrée, calme (plus de chute avec rebond ni d'effet de profondeur). Principes tirés du skill de design disponible (`artifact-design`) : aucun skill de design web n'est installé sur ton compte.
 - **Node.js absent** → Node 24 LTS portable téléchargé depuis nodejs.org (empreinte SHA-256 vérifiée), rangé dans `.tools/` à l'intérieur du projet. Rien n'est installé ailleurs sur le PC. `.tools/` n'est pas envoyé sur Git.
 - **Astro plutôt que HTML pur** : le contenu vient des 2 fichiers JSON et la page est générée à l'avance. Google lit tout le texte, aucun JavaScript n'est nécessaire pour voir les infos, et Cloudflare Pages sait construire Astro tout seul. C'est aussi un bon modèle à réutiliser pour tes prochains clients.
 - **Sources** : mondedumacaron.com (anglais) + mondedumacaron.fr (français, même catalogue, avec « Sucrés » / « Sucrés-Salés » et une page Villefranche). La catégorie « Sucrés-Salés » devient « Salé ».
@@ -26,7 +28,7 @@
 - **Noms** : nom français affiché, nom d'origine (anglais) gardé dans `nom_origine`. Marques adoucies : « Pâte à tartiner » (Nutella), « Biscuit cacao (Oreo) ».
 - **Allergènes** : aucun sur le site du réseau → « [ALLERGÈNES À VÉRIFIER] » partout. Rien n'a été deviné.
 - **Prix** : aucun affiché par le réseau → aucun prix sur le site (champ prêt dans le JSON).
-- **Horaires** : Google dit 8h00 en semaine et 8h30 le samedi, Instagram 8h, le réseau 8h30. → heure d'ouverture en [À REMPLACER]. Fermeture 19h et dimanche fermé sont sûrs.
+- **Horaires** : 8h – 19h du lundi au samedi, fermé le dimanche (confirmé par toi ; Google et le site du réseau avaient d'anciens horaires).
 - **Photos « 1200 px »** : les originaux font 1000 px, donc la grande version reste à 1000 px (pas d'agrandissement flou).
 - **Photos Litchi et Rose** : le réseau n'a que son logo à la place → retirées (« Photo à venir »).
 - **Plan au clic** : OpenStreetMap ne se charge qu'après un clic sur « Afficher le plan ». Aucune requête vers un tiers à l'ouverture de la page (mieux pour le RGPD et la vitesse).
@@ -46,12 +48,12 @@
 ## 5. Scores Lighthouse (mobile, 19/11/2026)
 | Page | Performance | Accessibilité | Bonnes pratiques | SEO |
 |---|---|---|---|---|
-| Accueil | 92 | 100 | 100 | 100 |
+| Accueil | 100 | 100 | 100 | 100 |
 | Nos macarons | 96 | 100 | 100 | 100 |
 | Coffrets & événements | 100 | 100 | 100 | 100 |
-| La boutique | 99 | 100 | 100 | 100 |
+| La boutique | 100 | 100 | 100 | 100 |
 | Mentions légales | 100 | 100 | 100 | 100 |
-| 404 | 96 | 100 | 100 | 69 * |
+| 404 | 100 | 100 | 100 | 69 * |
 
 \* Normal : la page 404 est volontairement cachée à Google (« noindex »).
 Vérifié aussi en 375, 768 et 1440 px : aucun débordement, aucun texte coupé, aucune erreur console, aucun lien cassé. Captures dans `captures/` (version pleine page + version écran pour chaque page et chaque taille).

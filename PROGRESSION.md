@@ -42,3 +42,4 @@
 - Étape 3 finie : Lighthouse mobile 92-100 (a11y/BP/SEO 100), 0 débordement, 0 erreur console, 0 lien cassé. Plan OSM passé « au clic ».
 - Étape 4 finie : build `npm run build` → `dist/`, .node-version=24, _headers (cache/sécurité), .gitignore. Rien envoyé en ligne.
 - Étape 5 finie : RAPPORT.md réécrit (version téléphone), serveur local arrêté. Mission terminée.
+- Retour de Kerem : horaires 8h-19h confirmés ; refonte du style en plus sobre et mature (site.css). Lighthouse 96-100. Captures refaites.

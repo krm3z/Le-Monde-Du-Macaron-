@@ -16,7 +16,7 @@ export const telHref = `tel:${boutique.telephone_international}`;
 export const mailHref = (objet = boutique.objet_mail_general) =>
   `mailto:${isTodo(boutique.email) ? '' : boutique.email}?subject=${encodeURIComponent(objet)}`;
 
-const hh = (t) => (isTodo(t) ? TODO : t.replace(':', 'h').replace(/h00$/, 'h'));
+const hh = (t) => (isTodo(t) ? TODO : t.replace(':', 'h').replace(/h00$/, 'h').replace(/^0/, ''));
 /** Horaires d'un jour en texte : « 8h30 – 19h », « Fermé »… */
 export const plage = (j) => (j.ferme ? 'Fermé' : `${hh(j.ouverture)} – ${hh(j.fermeture)}`);
 

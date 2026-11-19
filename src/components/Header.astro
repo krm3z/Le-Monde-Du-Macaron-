@@ -25,8 +25,8 @@ const liens = [
   <div class="menu" id="menu-mobile" data-menu hidden>
     <nav aria-label="Menu mobile">
       <ul>
-        <li><a href="/" aria-current={page === 'accueil' ? 'page' : undefined}><span>01</span>Accueil</a></li>
-        {liens.map((l, i) => <li><a href={l.href} aria-current={page === l.id ? 'page' : undefined}><span>0{i + 2}</span>{l.label}</a></li>)}
+        <li><a href="/" aria-current={page === "accueil" ? "page" : undefined}>Accueil</a></li>
+        {liens.map((l, i) => <li><a href={l.href} aria-current={page === l.id ? "page" : undefined}>{l.label}</a></li>)}
       </ul>
     </nav>
     <a class="btn menu__call" href={telHref}>Appeler la boutique</a>
