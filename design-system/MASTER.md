@@ -8,17 +8,19 @@ Méthode : skill **ui-ux-pro-max** (requête « bakery patisserie local shop ele
 - **Écarté** : la recommandation du skill pour « Bakery/Cafe » (style vif en blocs, claymorphism), contraire à la demande d'un site sérieux et mature.
 - Pas d'italiques décoratives dans les titres, pas de numéros « 01 / 02 », pas d'emoji.
 
-## Couleurs (imposées par le client)
+## Couleurs (palette officielle du réseau, relevée sur mondedumacaron.fr le 19/11/2026)
 | Rôle | Valeur | Usage |
 |---|---|---|
-| Fond | `#F4EDE3` crème | fond principal |
-| Sections | `#E8DCCB` beige | bandes alternées, bandeau |
-| Action | `#646B3F` olive | boutons principaux, accents (texte OK sur crème : 4,9:1) |
-| Détail | `#C98C88` vieux rose | filets, puces, survols — jamais de texte |
-| Texte | `#3A2A22` chocolat | texte et titres (12,9:1) ; fond du bloc « Venir à la boutique » et du pied de page |
-| Texte secondaire | `#5C4A40` | légendes (7,6:1) |
+| Fond | `#FFFFFF` blanc | fond principal, cartes |
+| Sections | `#F4F4F2` gris clair | bandes alternées, bandeau de macarons |
+| Action | `#D72688` rose fuchsia | boutons (texte blanc, 4,65:1), liens actifs, filets. En texte : seulement sur blanc |
+| Action survol | `#B01E6F` | survol des boutons |
+| Bandeau | `#1B1A19` noir | pilule de navigation, pied de page (comme l'en-tête du réseau) |
+| Texte | `#322C29` brun-noir | texte et titres (13,5:1) ; bloc « Venir à la boutique » |
+| Texte secondaire | `#5F5955` | légendes (6,8:1 sur blanc) |
 
-Le skill proposait noir + or et Cormorant/Montserrat : non retenu, la charte du client prime.
+Logo officiel (blanc, avec drapeau tricolore) : `public/logo-monde-du-macaron.webp`, posé uniquement sur fond noir.
+La première palette du cahier des charges (crème, olive, vieux rose) a été remplacée à la demande de Kerem.
 
 ## Typographie (imposée)
 - Titres : Playfair Display 500. Texte : Inter 400 / 600. Polices hébergées sur le site.

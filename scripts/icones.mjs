@@ -18,6 +18,6 @@ const layers = await Promise.all(files.slice(0, spots.length).map(async (f, i) =
   input: await sharp(path.join(dir, f)).resize(spots[i][2]).rotate((i % 2 ? 1 : -1) * (6 + i * 2), { background: { r: 0, g: 0, b: 0, alpha: 0 } }).toBuffer(),
   left: Math.max(0, spots[i][0]), top: spots[i][1],
 })));
-await sharp({ create: { width: 1200, height: 630, channels: 3, background: '#F4EDE3' } })
+await sharp({ create: { width: 1200, height: 630, channels: 3, background: '#FAFAFA' } })
   .composite(layers).jpeg({ quality: 82, mozjpeg: true }).toFile(pub('og.jpg'));
 console.log('icônes et og.jpg générés');

@@ -44,3 +44,4 @@
 - Étape 5 finie : RAPPORT.md réécrit (version téléphone), serveur local arrêté. Mission terminée.
 - Retour de Kerem : horaires 8h-19h confirmés ; refonte du style en plus sobre et mature (site.css). Lighthouse 96-100. Captures refaites.
 - Skill ui-ux-pro-max appliqué (motion tokens, cibles tactiles, contrôle 1024 px, design-system/MASTER.md). Lighthouse 95-100.
+- Palette officielle du réseau appliquée (noir, blanc, fuchsia #D72688, brun #322C29) + logo officiel. Lighthouse a11y 100.

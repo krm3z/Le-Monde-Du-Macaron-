@@ -108,3 +108,4 @@ Toutes les photos viennent du site du réseau Le Monde du Macaron (mondedumacaro
 | assets/photos/detourage/macaron-mangue-passion-seul.jpg | https://www.mondedumacaron.fr/media/catalog/product/m/a/mangue_passion_1.jpg | Mangue passion (macaron seul, animation d'accueil) |
 | assets/photos/detourage/macaron-violette-seul.jpg | https://www.mondedumacaron.fr/media/catalog/product/v/i/violette_2.jpg | Violette (macaron seul, animation d'accueil) |
 | assets/photos/detourage/macaron-vanille-seul.jpg | https://www.mondedumacaron.fr/media/catalog/product/v/a/vanille_1.jpg | Vanille (macaron seul, animation d'accueil) |
+| assets/logo/logo-monde-du-macaron.png (→ public/logo-monde-du-macaron.webp) | https://www.mondedumacaron.fr/media/wysiwyg/logo.png | Logo officiel du réseau (bandeau et pied de page) — **à faire valider avec les photos** |
