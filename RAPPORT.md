@@ -21,6 +21,7 @@
 
 ## 3. Décisions prises seul
 - **Refonte « plus sérieuse »** (à ta demande) : même palette et mêmes polices, mais mise en page alignée à gauche, titres sobres sans italiques décoratives, plus de numéros « 01 / 02 / 03 », angles discrets au lieu des grandes cartes arrondies, héros à la taille du contenu au lieu d'un plein écran, textes plus directs. Une seule animation d'entrée, calme (plus de chute avec rebond ni d'effet de profondeur). Principes tirés du skill de design disponible (`artifact-design`) : aucun skill de design web n'est installé sur ton compte.
+- **Skill ui-ux-pro-max** (le dépôt GitHub que tu m'as donné) : téléchargé dans un dossier temporaire (pas installé sur le PC), script vérifié puis lancé. Retenu : style minimaliste posé, animations subtiles (survols 200 ms, apparitions 350 ms / 12 px), 8 px entre les boutons, cibles de 44 px, contrôle en 1024 px. Écarté : son style « Boulangerie/Café » (couleurs vives, claymorphism), sa palette noir/or et ses polices, car ta charte prime ; et les témoignages clients (pas d'avis vérifiés réutilisables). Tout est résumé dans `design-system/MASTER.md`.
 - **Node.js absent** → Node 24 LTS portable téléchargé depuis nodejs.org (empreinte SHA-256 vérifiée), rangé dans `.tools/` à l'intérieur du projet. Rien n'est installé ailleurs sur le PC. `.tools/` n'est pas envoyé sur Git.
 - **Astro plutôt que HTML pur** : le contenu vient des 2 fichiers JSON et la page est générée à l'avance. Google lit tout le texte, aucun JavaScript n'est nécessaire pour voir les infos, et Cloudflare Pages sait construire Astro tout seul. C'est aussi un bon modèle à réutiliser pour tes prochains clients.
 - **Sources** : mondedumacaron.com (anglais) + mondedumacaron.fr (français, même catalogue, avec « Sucrés » / « Sucrés-Salés » et une page Villefranche). La catégorie « Sucrés-Salés » devient « Salé ».
@@ -48,7 +49,7 @@
 ## 5. Scores Lighthouse (mobile, 19/11/2026)
 | Page | Performance | Accessibilité | Bonnes pratiques | SEO |
 |---|---|---|---|---|
-| Accueil | 100 | 100 | 100 | 100 |
+| Accueil | 95 à 100 | 100 | 100 | 100 |
 | Nos macarons | 96 | 100 | 100 | 100 |
 | Coffrets & événements | 100 | 100 | 100 | 100 |
 | La boutique | 100 | 100 | 100 | 100 |
@@ -56,7 +57,7 @@
 | 404 | 100 | 100 | 100 | 69 * |
 
 \* Normal : la page 404 est volontairement cachée à Google (« noindex »).
-Vérifié aussi en 375, 768 et 1440 px : aucun débordement, aucun texte coupé, aucune erreur console, aucun lien cassé. Captures dans `captures/` (version pleine page + version écran pour chaque page et chaque taille).
+Vérifié aussi en 375, 768, 1024 et 1440 px : aucun débordement, aucun texte coupé, aucune erreur console, aucun lien cassé. Captures dans `captures/` (version pleine page + version écran pour chaque page et chaque taille).
 
 ## 6. Ce qui reste à faire
 - **Tout ce qui manque est listé dans `A-REMPLACER.md`** (avec la page et le fichier). Sur le site, chaque trou est surligné en jaune.

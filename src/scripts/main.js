@@ -61,8 +61,8 @@ $$(`[data-horaires] [data-jour="${code}"]`).forEach((l) => l.classList.add('is-t
 
 /* ---------- Apparitions douces au défilement ---------- */
 $$('[data-reveal]').forEach((el) => {
-  gsap.fromTo(el, { opacity: 0, y: reduce ? 0 : 14 }, {
-    opacity: 1, y: 0, duration: 0.7, ease: 'power2.out',
+  gsap.fromTo(el, { opacity: 0, y: reduce ? 0 : 12 }, {
+    opacity: 1, y: 0, duration: 0.35, ease: 'power1.out',
     scrollTrigger: { trigger: el, start: 'top 90%', once: true },
   });
 });
