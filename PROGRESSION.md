@@ -33,7 +33,7 @@
 - [x] Build compatible Cloudflare Pages, .gitignore
 
 ## Étape 5 — Rapport
-- [ ] RAPPORT.md + commit « Rapport »
+- [x] RAPPORT.md + commit « Rapport »
 
 ## Journal (une ligne par action)
 - Création du suivi. Node.js manquant : décision → Node portable dans `.tools/` (voir RAPPORT.md).
@@ -41,3 +41,4 @@
 - Étape 2 finie : Astro 7 statique, 6 pages + sitemap/robots, animations GSAP/Lenis, menu, filtre, cartes testés. Photos Litchi/Rose = logo du réseau → retirées.
 - Étape 3 finie : Lighthouse mobile 92-100 (a11y/BP/SEO 100), 0 débordement, 0 erreur console, 0 lien cassé. Plan OSM passé « au clic ».
 - Étape 4 finie : build `npm run build` → `dist/`, .node-version=24, _headers (cache/sécurité), .gitignore. Rien envoyé en ligne.
+- Étape 5 finie : RAPPORT.md réécrit (version téléphone), serveur local arrêté. Mission terminée.

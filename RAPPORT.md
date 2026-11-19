@@ -1,16 +1,87 @@
-# Rapport — brouillon de travail (sera réécrit à l'étape 5)
+# Rapport — site vitrine Le Monde du Macaron (Villefranche)
 
-## Décisions prises seul (au fil de l'eau)
-- Node.js absent du PC → Node 24 LTS portable téléchargé depuis nodejs.org (somme SHA-256 vérifiée) dans `.tools/node`, à l'intérieur du projet, non versionné. Cache npm aussi dans `.tools/`. Rien n'est installé ailleurs sur le PC.
-- Site source : mondedumacaron.com (anglais) + mondedumacaron.fr (français, même catalogue, avec catégories « Sucrés » / « Sucrés-Salés » et une page Villefranche).
-- Aucun allergène, aucun prix, aucune description sur les fiches du réseau → tous les produits ont « [ALLERGÈNES À VÉRIFIER] » et pas de prix.
-- Périmètre : les 79 macarons du catalogue français actuel (68 sucrés, 11 sucrés-salés) + 15 calissons. Les 37 nougats et 29 chocolats Weiss ne sont pas listés un par un (cité en « aussi en boutique ») pour garder un site centré sur les macarons. 28 parfums présents seulement sur le site anglais (ex. Cèpe, Avocat, Vodka-Redbull) sont considérés comme anciens et écartés.
-- Catégorie « Sucrés-Salés » du réseau → « salé » dans les données.
-- Les photos d'origine font 1000 × 1000 px : la version « 1200 » est donc en 1000 px (pas d'agrandissement, pour ne pas flouter).
-- Pas de page coffrets ni de produits « coffret » sur le site du réseau → page Coffrets & événements rédigée sans prix, avec photos de macarons.
-- Horaires : sources contradictoires sur l'heure d'ouverture (Google 8h00 en semaine / 8h30 le samedi, Instagram 8h, site du réseau 8h30) → ouverture en [À REMPLACER], fermeture 19h et dimanche fermé conservés (concordants).
-- E-mail de la boutique introuvable → [À REMPLACER] (l'adresse du siège n'est pas utilisée).
-- Google Maps : bandeau de consentement refusé (« Tout refuser »), rien accepté.
+## 1. Résumé en 5 lignes
+- Le site est **construit, testé et prêt à être mis en ligne** sur Cloudflare Pages (100 % statique).
+- 6 pages : Accueil, Nos macarons (94 produits), Coffrets & événements, La boutique, Mentions légales, 404.
+- Lighthouse mobile : performance 92 à 100, accessibilité / bonnes pratiques / SEO à 100.
+- **Il manque** : l'heure d'ouverture (sources contradictoires), l'e-mail de la boutique, les allergènes (le réseau n'en publie aucun), les infos légales de la société.
+- **Avant la mise en ligne** : obtenir l'accord du réseau pour les photos, et remplir `A-REMPLACER.md`.
 
-## Problèmes rencontrés
-- Détourage : 1er essai raté (bug d'ordre des opérations dans sharp), corrigé. Résultat propre sur les 8 macarons.
+## 2. Ce qui est fait, page par page
+- **Partout** : menu en pilule flottante (plein écran sur téléphone), pied de page chocolat avec adresse, horaires, Instagram, TikTok, mentions légales et « Site créé par Kerem Uysal ». Défilement fluide (Lenis), apparitions douces, transitions entre pages. Aucun cookie, aucun suivi, polices hébergées sur le site.
+- **Accueil** : 8 macarons détourés tombent un par un et se posent, puis « Le Monde du Macaron » apparaît. Bandeau de macarons qui défile et ralentit au survol / toucher. Chiffres clés, 8 incontournables, 3 cartes événements, bloc « Venir en boutique » (itinéraire, appel, horaires). Note Google 4,6 (719 avis).
+- **Nos macarons** : 94 cartes (68 sucrés, 11 salés, 15 calissons). Filtre Tout / Sucré / Salé / Calissons avec cartes qui glissent. Chaque carte se retourne au toucher ou au clavier (Entrée / Espace) : description + allergènes au dos.
+- **Coffrets & événements** : le texte de présentation se remplit du vieux rose au chocolat en défilant, deux rangées de photos glissent sur le côté. Conscrits, Mariages, Entreprises avec boutons « Appeler » et « Envoyer un mail » (objet pré-rempli).
+- **La boutique** : adresse, horaires (le jour actuel est signalé), boutons Itinéraire / Appeler, note Google avec compteur animé jusqu'à 719, plan OpenStreetMap qui apparaît en fondu au clic.
+- **Mentions légales** : éditeur, hébergeur Cloudflare (adresse officielle vérifiée), créateur, crédits photos, données personnelles.
+- **404** : « Ce macaron s'est échappé de la vitrine », avec un macaron qui se balance.
+- **SEO local** : titre et description par page, schema.org « Bakery » (adresse, GPS, téléphone, Instagram, TikTok), Open Graph avec image de partage, sitemap.xml, robots.txt, favicon.
+- **Accessibilité** : textes alternatifs, lien « Aller au contenu », navigation clavier, contrastes vérifiés, mode « mouvement réduit » (tout devient de simples fondus, rien ne bouge).
+
+## 3. Décisions prises seul
+- **Node.js absent** → Node 24 LTS portable téléchargé depuis nodejs.org (empreinte SHA-256 vérifiée), rangé dans `.tools/` à l'intérieur du projet. Rien n'est installé ailleurs sur le PC. `.tools/` n'est pas envoyé sur Git.
+- **Astro plutôt que HTML pur** : le contenu vient des 2 fichiers JSON et la page est générée à l'avance. Google lit tout le texte, aucun JavaScript n'est nécessaire pour voir les infos, et Cloudflare Pages sait construire Astro tout seul. C'est aussi un bon modèle à réutiliser pour tes prochains clients.
+- **Sources** : mondedumacaron.com (anglais) + mondedumacaron.fr (français, même catalogue, avec « Sucrés » / « Sucrés-Salés » et une page Villefranche). La catégorie « Sucrés-Salés » devient « Salé ».
+- **Périmètre** : les 79 macarons du catalogue français + 15 calissons. Les 37 nougats et 29 chocolats Weiss ne sont pas listés un par un (une phrase les mentionne). 28 parfums présents seulement sur le site anglais (Cèpe, Avocat, Vodka-Redbull…) sont considérés comme anciens.
+- **Noms** : nom français affiché, nom d'origine (anglais) gardé dans `nom_origine`. Marques adoucies : « Pâte à tartiner » (Nutella), « Biscuit cacao (Oreo) ».
+- **Allergènes** : aucun sur le site du réseau → « [ALLERGÈNES À VÉRIFIER] » partout. Rien n'a été deviné.
+- **Prix** : aucun affiché par le réseau → aucun prix sur le site (champ prêt dans le JSON).
+- **Horaires** : Google dit 8h00 en semaine et 8h30 le samedi, Instagram 8h, le réseau 8h30. → heure d'ouverture en [À REMPLACER]. Fermeture 19h et dimanche fermé sont sûrs.
+- **Photos « 1200 px »** : les originaux font 1000 px, donc la grande version reste à 1000 px (pas d'agrandissement flou).
+- **Photos Litchi et Rose** : le réseau n'a que son logo à la place → retirées (« Photo à venir »).
+- **Plan au clic** : OpenStreetMap ne se charge qu'après un clic sur « Afficher le plan ». Aucune requête vers un tiers à l'ouverture de la page (mieux pour le RGPD et la vitesse).
+- **Note Google** : affichée sur la page, mais pas mise dans le schema.org (Google refuse les avis « auto-déclarés » d'une entreprise sur son propre site).
+- **Textes** : toutes les descriptions et accroches sont écrites par moi (le réseau n'avait aucun texte descriptif). Les offres événements restent prudentes (pas de pièce montée ni de prix promis) : à valider avec la cliente.
+- **Google Maps** : bandeau de cookies refusé (« Tout refuser »), aucun compte, rien accepté.
+
+## 4. Problèmes rencontrés et contournements
+- Fiches produits du réseau vides (ni allergènes, ni prix, ni description) → marqueurs [À VÉRIFIER], descriptions rédigées.
+- Pas de page coffrets ni de produit « coffret » sur le site du réseau → page rédigée sans prix, illustrée avec les macarons.
+- Détourage : 1er essai raté (bug d'ordre des opérations), corrigé. Résultat net sur les 8 macarons, pas besoin du repli « photo en cercle ».
+- Le plan OpenStreetMap restait vide dans le navigateur intégré → passage au chargement au clic, avec un joli encart d'attente.
+- Le bandeau ne ralentissait pas au survol (animation pas encore prête au démarrage) → corrigé et vérifié dans Chrome.
+- Petits défauts vus sur les captures et corrigés : bouton invisible dans le bloc chocolat, macaron décoratif qui dépassait de 8 px sur téléphone, barre de filtres sur deux lignes, polices qui faisaient « sauter » la page (préchargement ajouté), calissons en tête de la page macarons (ordre changé).
+- Une commande groupée a été bloquée par une sécurité de l'outil → refaite fichier par fichier.
+
+## 5. Scores Lighthouse (mobile, 19/11/2026)
+| Page | Performance | Accessibilité | Bonnes pratiques | SEO |
+|---|---|---|---|---|
+| Accueil | 92 | 100 | 100 | 100 |
+| Nos macarons | 96 | 100 | 100 | 100 |
+| Coffrets & événements | 100 | 100 | 100 | 100 |
+| La boutique | 99 | 100 | 100 | 100 |
+| Mentions légales | 100 | 100 | 100 | 100 |
+| 404 | 96 | 100 | 100 | 69 * |
+
+\* Normal : la page 404 est volontairement cachée à Google (« noindex »).
+Vérifié aussi en 375, 768 et 1440 px : aucun débordement, aucun texte coupé, aucune erreur console, aucun lien cassé. Captures dans `captures/` (version pleine page + version écran pour chaque page et chaque taille).
+
+## 6. Ce qui reste à faire
+- **Tout ce qui manque est listé dans `A-REMPLACER.md`** (avec la page et le fichier). Sur le site, chaque trou est surligné en jaune.
+- **Photos** : toutes viennent du réseau. Liste fichier → URL d'origine → produit dans `SOURCES-PHOTOS.md`. À faire valider par le réseau avant la mise en ligne. Pour changer une photo : déposer un .jpg du même nom dans `assets/photos/` puis lancer le build.
+
+## 7. Voir le site sur ton PC
+Dans PowerShell (Node portable du projet, rien à installer) :
+
+```powershell
+cd C:\Users\kerem\Documents\Le-Monde-Du-Macaron
+$env:Path = "$PWD\.tools\node;$env:Path"
+npm run build
+npm run preview
+```
+Puis ouvrir http://localhost:4321 . Pour arrêter : Ctrl + C.
+Pour modifier en direct (rechargement automatique) : `npm run dev` à la place des deux dernières lignes.
+Si tu installes Node.js 24 LTS sur ton PC, la 2ᵉ ligne n'est plus utile.
+
+## 8. Mettre en ligne sur Cloudflare Pages (gratuit)
+1. Sur GitHub, crée un dépôt **privé** vide (ex. `le-monde-du-macaron-villefranche`), sans README.
+2. Dans PowerShell, dans le dossier du projet :
+   `git remote add origin https://github.com/TON-COMPTE/le-monde-du-macaron-villefranche.git`
+   puis `git push -u origin main`.
+3. Sur dash.cloudflare.com : **Workers & Pages** → **Créer** → onglet **Pages** → **Se connecter à Git** → choisis le dépôt.
+4. Réglages du build : préréglage **Astro**, commande `npm run build`, dossier de sortie `dist`. (La version de Node est lue dans `.node-version` ; sinon ajoute la variable `NODE_VERSION` = `24`.)
+5. **Enregistrer et déployer**. L'adresse sera du type `https://le-monde-du-macaron-villefranche.pages.dev`.
+6. Si l'adresse finale est différente (autre nom ou nom de domaine), mets-la dans `data/boutique.json` → `site_url`, puis renvoie sur GitHub (`git add -A`, `git commit -m "Adresse du site"`, `git push`). Chaque envoi redéploie le site tout seul.
+7. Nom de domaine (optionnel) : dans le projet Pages → **Domaines personnalisés**.
+
+Rien n'a été mis en ligne, aucun compte n'a été créé.
