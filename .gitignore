@@ -1,0 +1,29 @@
+# Dépendances et outils locaux
+node_modules/
+.tools/
+
+# Sorties de build Astro
+dist/
+.astro/
+
+# Journaux et fichiers système
+npm-debug.log*
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environnement
+.env
+.env.*
+
+# Éditeurs
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Rapports Lighthouse bruts (les scores sont dans RAPPORT.md)
+lighthouse/*.json
+
+# Réglages locaux de Claude Code
+.claude/

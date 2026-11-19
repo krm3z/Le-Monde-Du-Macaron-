@@ -1,0 +1,40 @@
+# Progression — site vitrine Le Monde du Macaron (Villefranche)
+
+> Si la session redémarre : relire ce fichier et RAPPORT.md, puis reprendre à la première case non cochée.
+
+## Étape 0 — Mise en route
+- [x] Vérifier Node.js et Git → Git 2.45 OK, Python 3.14 OK, Chrome OK, **Node.js absent**.
+- [x] Préparer un Node.js portable dans `.tools/` (dans le dossier du projet, non versionné).
+
+## Étape 1 — Collecte
+- [x] Parcourir nos-produits.html + pagination
+- [x] Parcourir les pages coffrets + page boutique Villefranche
+- [x] Télécharger les photos (assets/photos/) + WebP 600/1200 + SOURCES-PHOTOS.md
+- [x] Infos boutique (horaires, tél, mail, réseaux, avis Google) avec sources
+- [x] data/produits.json + data/boutique.json (descriptions réécrites)
+- [x] Commit « Collecte du contenu »
+
+## Étape 2 — Construction
+- [ ] Projet Astro statique, polices locales, GSAP/ScrollTrigger/Lenis
+- [ ] Pages : accueil, macarons, coffrets & événements, boutique, mentions légales, 404
+- [ ] SEO : titles, descriptions, schema.org, OG, sitemap, robots, favicon
+- [ ] A-REMPLACER.md
+- [ ] Commit « Construction du site »
+
+## Étape 3 — Vérification
+- [ ] Build + serveur local
+- [ ] 375 / 768 / 1440 px, console, liens, menu, filtre, cartes, boutons
+- [ ] Lighthouse mobile ≥ 90 sur chaque page
+- [ ] Relecture des textes
+- [ ] Captures dans captures/ + regard critique
+- [ ] Commit « Vérification et corrections »
+
+## Étape 4 — Déploiement (préparation)
+- [ ] Build compatible Cloudflare Pages, .gitignore
+
+## Étape 5 — Rapport
+- [ ] RAPPORT.md + commit « Rapport »
+
+## Journal (une ligne par action)
+- Création du suivi. Node.js manquant : décision → Node portable dans `.tools/` (voir RAPPORT.md).
+- Étape 1 finie : 94 produits (79 macarons + 15 calissons), 102 photos, 8 macarons détourés, boutique.json avec sources.

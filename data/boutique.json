@@ -1,0 +1,71 @@
+{
+  "_lisez_moi": "Toutes les infos de la boutique. Modifiez les valeurs entre guillemets, enregistrez, le site se met à jour au prochain build. Toute valeur '[À REMPLACER]' s'affiche en surligné sur le site tant qu'elle n'est pas remplie.",
+  "nom": "Le Monde du Macaron",
+  "ville": "Villefranche-sur-Saône",
+  "accroche": "Macarons, coffrets et douceurs à Villefranche-sur-Saône",
+  "type": "Boutique de macarons et salon de thé",
+  "adresse": {
+    "rue": "885 rue Nationale",
+    "code_postal": "69400",
+    "ville": "Villefranche-sur-Saône",
+    "pays": "FR",
+    "_source": "mondedumacaron.fr (page Villefranche), Google Maps, Instagram : concordants"
+  },
+  "geo": {
+    "latitude": 45.9874053,
+    "longitude": 4.7184469,
+    "_source": "Google Maps (fiche « Le monde du macaron », 885 Rue nationale)"
+  },
+  "telephone": "04 74 67 68 35",
+  "telephone_international": "+33474676835",
+  "_source_telephone": "mondedumacaron.fr, Google Maps, Instagram, Tripadvisor : concordants",
+  "email": "[À REMPLACER]",
+  "_note_email": "Aucune adresse e-mail propre à la boutique trouvée. Le réseau affiche contact@mondedumacaron.com (adresse du siège, pas de la boutique) : non utilisée.",
+  "horaires": [
+    { "jour": "Lundi",    "code": "Mo", "ouverture": "[À REMPLACER]", "fermeture": "19:00" },
+    { "jour": "Mardi",    "code": "Tu", "ouverture": "[À REMPLACER]", "fermeture": "19:00" },
+    { "jour": "Mercredi", "code": "We", "ouverture": "[À REMPLACER]", "fermeture": "19:00" },
+    { "jour": "Jeudi",    "code": "Th", "ouverture": "[À REMPLACER]", "fermeture": "19:00" },
+    { "jour": "Vendredi", "code": "Fr", "ouverture": "[À REMPLACER]", "fermeture": "19:00" },
+    { "jour": "Samedi",   "code": "Sa", "ouverture": "[À REMPLACER]", "fermeture": "19:00" },
+    { "jour": "Dimanche", "code": "Su", "ferme": true }
+  ],
+  "_note_horaires": "Sources contradictoires sur l'heure d'ouverture (format HH:MM, ex. 08:30). Google Maps (consulté le 19/11/2026) : lun-ven 08:00-19:00, sam 08:30-19:00, dim fermé. Instagram (bio) : lundi au samedi 8h-19h. mondedumacaron.fr (page Villefranche) : lun-sam 8h30-19h, dim fermé. Fermeture 19:00 et dimanche fermé : concordants.",
+  "reseaux": {
+    "instagram": "https://www.instagram.com/lemondedumacaron.69400/",
+    "instagram_pseudo": "@lemondedumacaron.69400",
+    "tiktok": "https://www.tiktok.com/@lemondedumacaron.69400",
+    "tiktok_pseudo": "@lemondedumacaron.69400",
+    "_source": "Instagram (profil) ; le lien TikTok est indiqué dans la bio Instagram"
+  },
+  "google": {
+    "note": 4.6,
+    "nombre_avis": 719,
+    "lien_fiche": "https://maps.google.com/?cid=10319224906476663193",
+    "lien_itineraire": "https://www.google.com/maps/dir/?api=1&destination=Le+Monde+du+Macaron%2C+885+rue+Nationale%2C+69400+Villefranche-sur-Sa%C3%B4ne",
+    "date_releve": "2026-11-19",
+    "_source": "Google Maps, relevé le 19/11/2026. À mettre à jour de temps en temps."
+  },
+  "site_url": "https://le-monde-du-macaron-villefranche.pages.dev",
+  "_note_site_url": "Adresse provisoire Cloudflare Pages. À changer si vous prenez un nom de domaine (ex. lemondedumacaron-villefranche.fr).",
+  "objets_mail": {
+    "conscrits": "Demande de devis – Conscrits",
+    "mariage": "Demande de devis – Mariage",
+    "entreprise": "Demande de devis – Commande d'entreprise",
+    "general": "Demande d'information"
+  },
+  "mentions_legales": {
+    "raison_sociale": "[À REMPLACER]",
+    "forme_juridique": "[À REMPLACER]",
+    "capital": "[À REMPLACER]",
+    "siret": "[À REMPLACER]",
+    "rcs": "[À REMPLACER]",
+    "tva": "[À REMPLACER]",
+    "responsable_publication": "[À REMPLACER]",
+    "_note": "Infos de la société franchisée qui exploite la boutique : à demander à la gérante (Kbis)."
+  },
+  "createur": {
+    "nom": "Kerem Uysal",
+    "email": "keremuysal19@icloud.com"
+  }
+}
