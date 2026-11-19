@@ -45,3 +45,10 @@
 - Retour de Kerem : horaires 8h-19h confirmés ; refonte du style en plus sobre et mature (site.css). Lighthouse 96-100. Captures refaites.
 - Skill ui-ux-pro-max appliqué (motion tokens, cibles tactiles, contrôle 1024 px, design-system/MASTER.md). Lighthouse 95-100.
 - Palette officielle du réseau appliquée (noir, blanc, fuchsia #D72688, brun #322C29) + logo officiel. Lighthouse a11y 100.
+
+## Refonte « Pièce par pièce » (en cours — limite d'utilisation atteinte le 20/11/2026)
+- [x] Atelier de conception : 3 propositions (design-system/proposition-*.md), cahier des charges final design-system/DIRECTION.md (+ IDENTITE-VILLEFRANCHE.md qui prime).
+- [x] Nom « Le Monde du Macaron Villefranche » + salon de thé dans data/boutique.json.
+- [x] Détourage amélioré de 77 macarons (scripts/photos.mjs, public/photos/detoure/).
+- [x] Outils de contrôle : .tools/qa/pellicule.mjs (captures d'animation), serveur dev (.claude/launch.json « dev », port 4330).
+- [ ] Lot Fondations (voir DIRECTION.md §C), puis lots pages en parallèle (Accueil, Nos macarons, Coffrets, Boutique, Mentions+404), puis revue + Lighthouse + captures + rapport.

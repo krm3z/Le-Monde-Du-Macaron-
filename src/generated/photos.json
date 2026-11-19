@@ -1410,82 +1410,852 @@
   ]
  },
  "detoure/macaron-chocolat-seul": {
-  "ratio": 0.6177884615384616,
+  "ratio": 0.5889423076923077,
   "sizes": [
    {
     "w": 416,
-    "h": 257,
+    "h": 245,
     "src": "/photos/detoure/macaron-chocolat-seul.webp"
    }
   ]
  },
  "detoure/macaron-citron-seul": {
-  "ratio": 0.7965116279069767,
+  "ratio": 0.80625,
   "sizes": [
    {
-    "w": 344,
-    "h": 274,
+    "w": 320,
+    "h": 258,
     "src": "/photos/detoure/macaron-citron-seul.webp"
    }
   ]
  },
  "detoure/macaron-framboise-seul": {
-  "ratio": 0.6536585365853659,
+  "ratio": 0.6228710462287105,
   "sizes": [
    {
-    "w": 410,
-    "h": 268,
+    "w": 411,
+    "h": 256,
     "src": "/photos/detoure/macaron-framboise-seul.webp"
    }
   ]
  },
  "detoure/macaron-mangue-passion-seul": {
-  "ratio": 0.6298076923076923,
+  "ratio": 0.6157635467980296,
   "sizes": [
    {
-    "w": 416,
-    "h": 262,
+    "w": 406,
+    "h": 250,
     "src": "/photos/detoure/macaron-mangue-passion-seul.webp"
    }
   ]
  },
  "detoure/macaron-myrtille-seul": {
-  "ratio": 0.654911838790932,
+  "ratio": 0.6294416243654822,
   "sizes": [
    {
-    "w": 397,
-    "h": 260,
+    "w": 394,
+    "h": 248,
     "src": "/photos/detoure/macaron-myrtille-seul.webp"
    }
   ]
  },
  "detoure/macaron-pistache-seul": {
-  "ratio": 0.6945169712793734,
+  "ratio": 0.6649214659685864,
   "sizes": [
    {
-    "w": 383,
-    "h": 266,
+    "w": 382,
+    "h": 254,
     "src": "/photos/detoure/macaron-pistache-seul.webp"
    }
   ]
  },
  "detoure/macaron-vanille-seul": {
-  "ratio": 0.9278688524590164,
+  "ratio": 0.8854166666666666,
   "sizes": [
    {
-    "w": 305,
-    "h": 283,
+    "w": 288,
+    "h": 255,
     "src": "/photos/detoure/macaron-vanille-seul.webp"
    }
   ]
  },
  "detoure/macaron-violette-seul": {
-  "ratio": 0.6700251889168766,
+  "ratio": 0.6395939086294417,
   "sizes": [
    {
-    "w": 397,
-    "h": 266,
+    "w": 394,
+    "h": 252,
     "src": "/photos/detoure/macaron-violette-seul.webp"
+   }
+  ]
+ },
+ "detoure/macaron-ananas-vanille": {
+  "ratio": 0.6888888888888889,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 248,
+    "src": "/photos/detoure/macaron-ananas-vanille.webp"
+   }
+  ]
+ },
+ "detoure/macaron-barbe-a-papa": {
+  "ratio": 0.7126436781609196,
+  "sizes": [
+   {
+    "w": 348,
+    "h": 248,
+    "src": "/photos/detoure/macaron-barbe-a-papa.webp"
+   }
+  ]
+ },
+ "detoure/macaron-bergamotte": {
+  "ratio": 0.6722222222222223,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 242,
+    "src": "/photos/detoure/macaron-bergamotte.webp"
+   }
+  ]
+ },
+ "detoure/macaron-biscuit-petit-beurre": {
+  "ratio": 0.5777777777777777,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 208,
+    "src": "/photos/detoure/macaron-biscuit-petit-beurre.webp"
+   }
+  ]
+ },
+ "detoure/macaron-bounty": {
+  "ratio": 0.6694677871148459,
+  "sizes": [
+   {
+    "w": 357,
+    "h": 239,
+    "src": "/photos/detoure/macaron-bounty.webp"
+   }
+  ]
+ },
+ "detoure/macaron-cacahuete-enrobee-mandms": {
+  "ratio": 0.6527777777777778,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 235,
+    "src": "/photos/detoure/macaron-cacahuete-enrobee-mandms.webp"
+   }
+  ]
+ },
+ "detoure/macaron-cafe": {
+  "ratio": 0.6138888888888889,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 221,
+    "src": "/photos/detoure/macaron-cafe.webp"
+   }
+  ]
+ },
+ "detoure/macaron-calisson": {
+  "ratio": 0.8392282958199357,
+  "sizes": [
+   {
+    "w": 311,
+    "h": 261,
+    "src": "/photos/detoure/macaron-calisson.webp"
+   }
+  ]
+ },
+ "detoure/macaron-caramel-beurre-sale": {
+  "ratio": 0.5777777777777777,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 208,
+    "src": "/photos/detoure/macaron-caramel-beurre-sale.webp"
+   }
+  ]
+ },
+ "detoure/macaron-cassis": {
+  "ratio": 0.7312138728323699,
+  "sizes": [
+   {
+    "w": 346,
+    "h": 253,
+    "src": "/photos/detoure/macaron-cassis.webp"
+   }
+  ]
+ },
+ "detoure/macaron-cerise": {
+  "ratio": 0.8474025974025974,
+  "sizes": [
+   {
+    "w": 308,
+    "h": 261,
+    "src": "/photos/detoure/macaron-cerise.webp"
+   }
+  ]
+ },
+ "detoure/macaron-cerise-pistache": {
+  "ratio": 0.7650602409638554,
+  "sizes": [
+   {
+    "w": 332,
+    "h": 254,
+    "src": "/photos/detoure/macaron-cerise-pistache.webp"
+   }
+  ]
+ },
+ "detoure/macaron-champagne": {
+  "ratio": 0.7961783439490446,
+  "sizes": [
+   {
+    "w": 314,
+    "h": 250,
+    "src": "/photos/detoure/macaron-champagne.webp"
+   }
+  ]
+ },
+ "detoure/macaron-chocolat": {
+  "ratio": 0.5888888888888889,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 212,
+    "src": "/photos/detoure/macaron-chocolat.webp"
+   }
+  ]
+ },
+ "detoure/macaron-chocolat-blanc": {
+  "ratio": 0.6472222222222223,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 233,
+    "src": "/photos/detoure/macaron-chocolat-blanc.webp"
+   }
+  ]
+ },
+ "detoure/macaron-chocolat-framboise": {
+  "ratio": 0.6527777777777778,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 235,
+    "src": "/photos/detoure/macaron-chocolat-framboise.webp"
+   }
+  ]
+ },
+ "detoure/macaron-chocolat-passion": {
+  "ratio": 0.6388888888888888,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 230,
+    "src": "/photos/detoure/macaron-chocolat-passion.webp"
+   }
+  ]
+ },
+ "detoure/macaron-citron": {
+  "ratio": 0.80625,
+  "sizes": [
+   {
+    "w": 320,
+    "h": 258,
+    "src": "/photos/detoure/macaron-citron.webp"
+   }
+  ]
+ },
+ "detoure/macaron-citron-vert-cactus": {
+  "ratio": 0.7166666666666667,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 258,
+    "src": "/photos/detoure/macaron-citron-vert-cactus.webp"
+   }
+  ]
+ },
+ "detoure/macaron-cookie": {
+  "ratio": 0.7333333333333333,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 264,
+    "src": "/photos/detoure/macaron-cookie.webp"
+   }
+  ]
+ },
+ "detoure/macaron-coquelicot": {
+  "ratio": 0.6388888888888888,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 230,
+    "src": "/photos/detoure/macaron-coquelicot.webp"
+   }
+  ]
+ },
+ "detoure/macaron-creme-brulee": {
+  "ratio": 0.8652037617554859,
+  "sizes": [
+   {
+    "w": 319,
+    "h": 276,
+    "src": "/photos/detoure/macaron-creme-brulee.webp"
+   }
+  ]
+ },
+ "detoure/macaron-crumble-pomme": {
+  "ratio": 0.6444444444444445,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 232,
+    "src": "/photos/detoure/macaron-crumble-pomme.webp"
+   }
+  ]
+ },
+ "detoure/macaron-feve-de-tonka": {
+  "ratio": 0.8145896656534954,
+  "sizes": [
+   {
+    "w": 329,
+    "h": 268,
+    "src": "/photos/detoure/macaron-feve-de-tonka.webp"
+   }
+  ]
+ },
+ "detoure/macaron-figue": {
+  "ratio": 0.6555555555555556,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 236,
+    "src": "/photos/detoure/macaron-figue.webp"
+   }
+  ]
+ },
+ "detoure/macaron-fleur-d-oranger": {
+  "ratio": 0.8419354838709677,
+  "sizes": [
+   {
+    "w": 310,
+    "h": 261,
+    "src": "/photos/detoure/macaron-fleur-d-oranger.webp"
+   }
+  ]
+ },
+ "detoure/macaron-fraise": {
+  "ratio": 0.6472222222222223,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 233,
+    "src": "/photos/detoure/macaron-fraise.webp"
+   }
+  ]
+ },
+ "detoure/macaron-fraise-tagada": {
+  "ratio": 0.742296918767507,
+  "sizes": [
+   {
+    "w": 357,
+    "h": 265,
+    "src": "/photos/detoure/macaron-fraise-tagada.webp"
+   }
+  ]
+ },
+ "detoure/macaron-framboise": {
+  "ratio": 0.6222222222222222,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 224,
+    "src": "/photos/detoure/macaron-framboise.webp"
+   }
+  ]
+ },
+ "detoure/macaron-framboise-litchi-rose": {
+  "ratio": 0.8145896656534954,
+  "sizes": [
+   {
+    "w": 329,
+    "h": 268,
+    "src": "/photos/detoure/macaron-framboise-litchi-rose.webp"
+   }
+  ]
+ },
+ "detoure/macaron-framboise-myrtille-violette": {
+  "ratio": 0.72,
+  "sizes": [
+   {
+    "w": 350,
+    "h": 252,
+    "src": "/photos/detoure/macaron-framboise-myrtille-violette.webp"
+   }
+  ]
+ },
+ "detoure/macaron-gianduja": {
+  "ratio": 0.6305555555555555,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 227,
+    "src": "/photos/detoure/macaron-gianduja.webp"
+   }
+  ]
+ },
+ "detoure/macaron-grand-marnier": {
+  "ratio": 0.6694444444444444,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 241,
+    "src": "/photos/detoure/macaron-grand-marnier.webp"
+   }
+  ]
+ },
+ "detoure/macaron-guimauve": {
+  "ratio": 0.7464788732394366,
+  "sizes": [
+   {
+    "w": 355,
+    "h": 265,
+    "src": "/photos/detoure/macaron-guimauve.webp"
+   }
+  ]
+ },
+ "detoure/macaron-kiwi-banane": {
+  "ratio": 0.8571428571428571,
+  "sizes": [
+   {
+    "w": 301,
+    "h": 258,
+    "src": "/photos/detoure/macaron-kiwi-banane.webp"
+   }
+  ]
+ },
+ "detoure/macaron-mandarine-yuzu": {
+  "ratio": 0.8915254237288136,
+  "sizes": [
+   {
+    "w": 295,
+    "h": 263,
+    "src": "/photos/detoure/macaron-mandarine-yuzu.webp"
+   }
+  ]
+ },
+ "detoure/macaron-mangue-passion": {
+  "ratio": 0.6166666666666667,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 222,
+    "src": "/photos/detoure/macaron-mangue-passion.webp"
+   }
+  ]
+ },
+ "detoure/macaron-marron-glace": {
+  "ratio": 0.7559523809523809,
+  "sizes": [
+   {
+    "w": 336,
+    "h": 254,
+    "src": "/photos/detoure/macaron-marron-glace.webp"
+   }
+  ]
+ },
+ "detoure/macaron-melon": {
+  "ratio": 0.7915407854984894,
+  "sizes": [
+   {
+    "w": 331,
+    "h": 262,
+    "src": "/photos/detoure/macaron-melon.webp"
+   }
+  ]
+ },
+ "detoure/macaron-menthe-glaciale": {
+  "ratio": 0.7972222222222223,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 287,
+    "src": "/photos/detoure/macaron-menthe-glaciale.webp"
+   }
+  ]
+ },
+ "detoure/macaron-mirabelle-thym": {
+  "ratio": 0.6388888888888888,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 230,
+    "src": "/photos/detoure/macaron-mirabelle-thym.webp"
+   }
+  ]
+ },
+ "detoure/macaron-mojito": {
+  "ratio": 0.6805555555555556,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 245,
+    "src": "/photos/detoure/macaron-mojito.webp"
+   }
+  ]
+ },
+ "detoure/macaron-myrtille": {
+  "ratio": 0.6305555555555555,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 227,
+    "src": "/photos/detoure/macaron-myrtille.webp"
+   }
+  ]
+ },
+ "detoure/macaron-noix-de-coco": {
+  "ratio": 0.8858131487889274,
+  "sizes": [
+   {
+    "w": 289,
+    "h": 256,
+    "src": "/photos/detoure/macaron-noix-de-coco.webp"
+   }
+  ]
+ },
+ "detoure/macaron-nougat": {
+  "ratio": 0.8854166666666666,
+  "sizes": [
+   {
+    "w": 288,
+    "h": 255,
+    "src": "/photos/detoure/macaron-nougat.webp"
+   }
+  ]
+ },
+ "detoure/macaron-nutella": {
+  "ratio": 0.6277777777777778,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 226,
+    "src": "/photos/detoure/macaron-nutella.webp"
+   }
+  ]
+ },
+ "detoure/macaron-oreo": {
+  "ratio": 0.8278145695364238,
+  "sizes": [
+   {
+    "w": 302,
+    "h": 250,
+    "src": "/photos/detoure/macaron-oreo.webp"
+   }
+  ]
+ },
+ "detoure/macaron-pain-d-epices": {
+  "ratio": 0.6666666666666666,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 240,
+    "src": "/photos/detoure/macaron-pain-d-epices.webp"
+   }
+  ]
+ },
+ "detoure/macaron-peche-de-vigne": {
+  "ratio": 0.796923076923077,
+  "sizes": [
+   {
+    "w": 325,
+    "h": 259,
+    "src": "/photos/detoure/macaron-peche-de-vigne.webp"
+   }
+  ]
+ },
+ "detoure/macaron-pistache": {
+  "ratio": 0.6638888888888889,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 239,
+    "src": "/photos/detoure/macaron-pistache.webp"
+   }
+  ]
+ },
+ "detoure/macaron-poire-the-vert": {
+  "ratio": 0.625,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 225,
+    "src": "/photos/detoure/macaron-poire-the-vert.webp"
+   }
+  ]
+ },
+ "detoure/macaron-pomme-d-amour": {
+  "ratio": 0.7361111111111112,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 265,
+    "src": "/photos/detoure/macaron-pomme-d-amour.webp"
+   }
+  ]
+ },
+ "detoure/macaron-praline": {
+  "ratio": 0.6666666666666666,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 240,
+    "src": "/photos/detoure/macaron-praline.webp"
+   }
+  ]
+ },
+ "detoure/macaron-praline-grenadine": {
+  "ratio": 0.7840236686390533,
+  "sizes": [
+   {
+    "w": 338,
+    "h": 265,
+    "src": "/photos/detoure/macaron-praline-grenadine.webp"
+   }
+  ]
+ },
+ "detoure/macaron-rhum-raisin": {
+  "ratio": 0.7222222222222222,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 260,
+    "src": "/photos/detoure/macaron-rhum-raisin.webp"
+   }
+  ]
+ },
+ "detoure/macaron-speculoos": {
+  "ratio": 0.675,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 243,
+    "src": "/photos/detoure/macaron-speculoos.webp"
+   }
+  ]
+ },
+ "detoure/macaron-tarte-aux-fraises": {
+  "ratio": 0.6444444444444445,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 232,
+    "src": "/photos/detoure/macaron-tarte-aux-fraises.webp"
+   }
+  ]
+ },
+ "detoure/macaron-tarte-citron": {
+  "ratio": 0.7333333333333333,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 264,
+    "src": "/photos/detoure/macaron-tarte-citron.webp"
+   }
+  ]
+ },
+ "detoure/macaron-tarte-tatin": {
+  "ratio": 0.6722222222222223,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 242,
+    "src": "/photos/detoure/macaron-tarte-tatin.webp"
+   }
+  ]
+ },
+ "detoure/macaron-tiramisu": {
+  "ratio": 0.7222222222222222,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 260,
+    "src": "/photos/detoure/macaron-tiramisu.webp"
+   }
+  ]
+ },
+ "detoure/macaron-tutti-frutti": {
+  "ratio": 0.6666666666666666,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 240,
+    "src": "/photos/detoure/macaron-tutti-frutti.webp"
+   }
+  ]
+ },
+ "detoure/macaron-vanille": {
+  "ratio": 0.8854166666666666,
+  "sizes": [
+   {
+    "w": 288,
+    "h": 255,
+    "src": "/photos/detoure/macaron-vanille.webp"
+   }
+  ]
+ },
+ "detoure/macaron-vanille-fraise": {
+  "ratio": 0.6194444444444445,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 223,
+    "src": "/photos/detoure/macaron-vanille-fraise.webp"
+   }
+  ]
+ },
+ "detoure/macaron-vanille-noix-de-pecan": {
+  "ratio": 0.7787610619469026,
+  "sizes": [
+   {
+    "w": 339,
+    "h": 264,
+    "src": "/photos/detoure/macaron-vanille-noix-de-pecan.webp"
+   }
+  ]
+ },
+ "detoure/macaron-violette": {
+  "ratio": 0.6388888888888888,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 230,
+    "src": "/photos/detoure/macaron-violette.webp"
+   }
+  ]
+ },
+ "detoure/macaron-yuzu": {
+  "ratio": 0.8914473684210527,
+  "sizes": [
+   {
+    "w": 304,
+    "h": 271,
+    "src": "/photos/detoure/macaron-yuzu.webp"
+   }
+  ]
+ },
+ "detoure/macaron-abricot-vanille-fleur-de-sel": {
+  "ratio": 0.5666666666666667,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 204,
+    "src": "/photos/detoure/macaron-abricot-vanille-fleur-de-sel.webp"
+   }
+  ]
+ },
+ "detoure/macaron-boursin": {
+  "ratio": 0.6277777777777778,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 226,
+    "src": "/photos/detoure/macaron-boursin.webp"
+   }
+  ]
+ },
+ "detoure/macaron-chevre-basilic": {
+  "ratio": 0.752906976744186,
+  "sizes": [
+   {
+    "w": 344,
+    "h": 259,
+    "src": "/photos/detoure/macaron-chevre-basilic.webp"
+   }
+  ]
+ },
+ "detoure/macaron-chevre-thym": {
+  "ratio": 0.7535816618911175,
+  "sizes": [
+   {
+    "w": 349,
+    "h": 263,
+    "src": "/photos/detoure/macaron-chevre-thym.webp"
+   }
+  ]
+ },
+ "detoure/macaron-chorizo": {
+  "ratio": 0.6944444444444444,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 250,
+    "src": "/photos/detoure/macaron-chorizo.webp"
+   }
+  ]
+ },
+ "detoure/macaron-figue-oignon": {
+  "ratio": 0.8066465256797583,
+  "sizes": [
+   {
+    "w": 331,
+    "h": 267,
+    "src": "/photos/detoure/macaron-figue-oignon.webp"
+   }
+  ]
+ },
+ "detoure/macaron-foie-gras-piment": {
+  "ratio": 0.8061538461538461,
+  "sizes": [
+   {
+    "w": 325,
+    "h": 262,
+    "src": "/photos/detoure/macaron-foie-gras-piment.webp"
+   }
+  ]
+ },
+ "detoure/macaron-roquefort": {
+  "ratio": 0.7333333333333333,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 264,
+    "src": "/photos/detoure/macaron-roquefort.webp"
+   }
+  ]
+ },
+ "detoure/macaron-roquefort-noix": {
+  "ratio": 0.7636887608069164,
+  "sizes": [
+   {
+    "w": 347,
+    "h": 265,
+    "src": "/photos/detoure/macaron-roquefort-noix.webp"
+   }
+  ]
+ },
+ "detoure/macaron-saumon-aneth": {
+  "ratio": 0.6888888888888889,
+  "sizes": [
+   {
+    "w": 360,
+    "h": 248,
+    "src": "/photos/detoure/macaron-saumon-aneth.webp"
+   }
+  ]
+ },
+ "detoure/macaron-tomate-basilic": {
+  "ratio": 0.8383233532934131,
+  "sizes": [
+   {
+    "w": 334,
+    "h": 280,
+    "src": "/photos/detoure/macaron-tomate-basilic.webp"
    }
   ]
  }

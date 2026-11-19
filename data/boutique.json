@@ -1,6 +1,17 @@
 {
   "_lisez_moi": "Toutes les infos de la boutique. Modifiez les valeurs entre guillemets, enregistrez, le site se met à jour au prochain build. Toute valeur '[À REMPLACER]' s'affiche en surligné sur le site tant qu'elle n'est pas remplie.",
   "nom": "Le Monde du Macaron",
+  "nom_complet": "Le Monde du Macaron Villefranche",
+  "_note_nom": "Le site est celui de la boutique de Villefranche (franchise), pas le site national du réseau : toujours afficher « Le Monde du Macaron Villefranche ».",
+  "reseau": "Le Monde du Macaron",
+  "slogan": "Le spécialiste de la gourmandise made in France",
+  "_source_slogan": "Bio Instagram de la boutique (@lemondedumacaron.69400)",
+  "salon_de_the": {
+    "titre": "Le salon de thé",
+    "texte": "À la boutique de Villefranche, on peut aussi s'installer : crêpes, gaufres, boissons chaudes, milk-shakes, glaces et pâtisseries, à déguster sur place.",
+    "carte": ["Crêpes", "Gaufres", "Boissons chaudes", "Boissons gourmandes", "Milk-shakes", "Glaces", "Pâtisseries"],
+    "_source": "Instagram de la boutique (stories à la une : Boissons gourmandes, Glaces, Crêpes, Pâtisseries, Nos milk-shake) et avis Google Maps (thèmes : crêpes, gaufres, boissons chaudes), relevés le 19/11/2026. Pas de prix ni de carte détaillée : à compléter avec la gérante."
+  },
   "ville": "Villefranche-sur-Saône",
   "accroche": "Macarons, coffrets et douceurs à Villefranche-sur-Saône",
   "type": "Boutique de macarons et salon de thé",

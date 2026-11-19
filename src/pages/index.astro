@@ -32,7 +32,7 @@ const g = boutique.google;
       </figure>
       <div>
         <p class="eyebrow">Boutique et salon de thé · <span style="white-space:nowrap">Villefranche-sur-Saône</span></p>
-        <h1 class="hero__title" id="hero-title" data-hero-fade>{boutique.nom}</h1>
+        <h1 class="hero__title" id="hero-title" data-hero-fade>{boutique.nom_complet}</h1>
         <p class="hero__lead">{boutique.textes.accroche}</p>
         <ul class="facts">
           {semaine && <li><span>{semaine.jours}</span><span set:html={mark(semaine.plage)} /></li>}

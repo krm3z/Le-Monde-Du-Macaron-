@@ -41,24 +41,33 @@ for (const file of (await fs.readdir(SRC)).filter((f) => EXT.test(f))) {
   console.log('[photos]', name);
 }
 
-// 2. Détourage (fond blanc -> transparent) pour l'animation d'accueil
-async function detoure(src, dest) {
+// 2. Détourage (fond clair -> transparent)
+//    Un pixel relié au bord est du « fond » s'il ressemble au fond de sa ligne (gère les dégradés)
+//    ou s'il est gris neutre et clair (sol, reflet, ombre portée de la photo).
+async function detoure(src, dest, largeur = 480) {
   const { data, info } = await sharp(src).resize(700).removeAlpha().raw().toBuffer({ resolveWithObject: true });
   const { width: W, height: H } = info;
   const N = W * H;
-  // couleur de fond estimée sur les bords
-  let r = 0, g = 0, b = 0, n = 0;
-  for (let x = 0; x < W; x += 4) for (const y of [0, H - 1]) { const i = (y * W + x) * 3; r += data[i]; g += data[i + 1]; b += data[i + 2]; n++; }
-  r /= n; g /= n; b /= n;
-  const dist = (i) => Math.hypot(data[i * 3] - r, data[i * 3 + 1] - g, data[i * 3 + 2] - b);
-  const TOL = 42;
+  const rowBg = [];
+  for (let y = 0; y < H; y++) {
+    let r = 0, g = 0, b = 0;
+    for (const x of [0, 1, 2, W - 3, W - 2, W - 1]) { const i = (y * W + x) * 3; r += data[i]; g += data[i + 1]; b += data[i + 2]; }
+    rowBg.push([r / 6, g / 6, b / 6]);
+  }
+  const TOL = 30;
+  const isBg = (p) => {
+    const c = rowBg[(p / W) | 0];
+    const r = data[p * 3], g = data[p * 3 + 1], b = data[p * 3 + 2];
+    if (Math.hypot(r - c[0], g - c[1], b - c[2]) <= TOL) return true;
+    return Math.max(r, g, b) - Math.min(r, g, b) < 20 && r * 0.3 + g * 0.59 + b * 0.11 > 125;
+  };
   const bg = new Uint8Array(N);
   const stack = [];
   for (let x = 0; x < W; x++) stack.push(x, (H - 1) * W + x);
   for (let y = 0; y < H; y++) stack.push(y * W, y * W + W - 1);
   while (stack.length) {
     const p = stack.pop();
-    if (bg[p] || dist(p) > TOL) continue;
+    if (bg[p] || !isBg(p)) continue;
     bg[p] = 1;
     const x = p % W, y = (p / W) | 0;
     if (x > 0) stack.push(p - 1); if (x < W - 1) stack.push(p + 1);
@@ -87,10 +96,24 @@ async function detoure(src, dest) {
   }
   const info2 = await sharp(rgba, { raw: { width: W, height: H, channels: 4 } })
     .extract({ left, top, width: w, height: h })
-    .resize({ width: 480, withoutEnlargement: true })
+    .resize({ width: largeur, withoutEnlargement: true })
     .webp({ quality: 80, alphaQuality: 90, effort: 5 })
     .toFile(dest);
   return { w: info2.width, h: info2.height };
+}
+
+// 3. Version détourée de chaque photo de macaron listée dans data/produits.json
+//    -> public/photos/detoure/<photo>.webp (clé du manifeste : « detoure/<photo> »)
+const produits = JSON.parse(await fs.readFile(path.join(ROOT, 'data/produits.json'), 'utf8')).produits;
+for (const p of produits.filter((x) => x.famille === 'macaron' && x.photo)) {
+  const file = (await fs.readdir(SRC)).find((f) => f.replace(EXT, '') === p.photo && EXT.test(f));
+  if (!file) continue;
+  const dest = path.join(OUT, 'detoure', `${p.photo}.webp`);
+  const key = `detoure/${p.photo}`;
+  if (!sharp || ((await mtime(dest)) > (await mtime(path.join(SRC, file))) && manifest[key])) continue;
+  const s = await detoure(path.join(SRC, file), dest, 360);
+  manifest[key] = { ratio: s.h / s.w, sizes: [{ ...s, src: `/photos/detoure/${p.photo}.webp` }] };
+  console.log('[photos] détouré', p.photo);
 }
 
 const DET = path.join(SRC, 'detourage');
