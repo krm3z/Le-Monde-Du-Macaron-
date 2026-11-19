@@ -4,6 +4,9 @@ import '@fontsource/playfair-display/latin-500-italic.css';
 import '@fontsource/inter/latin-400.css';
 import '@fontsource/inter/latin-600.css';
 import '../styles/global.css';
+import fPlayfair from '@fontsource/playfair-display/files/playfair-display-latin-500-normal.woff2?url';
+import fPlayfairIt from '@fontsource/playfair-display/files/playfair-display-latin-500-italic.woff2?url';
+import fInter from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { boutique, isTodo } from '../lib/site.js';
@@ -48,6 +51,7 @@ const jsonld = {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
+    {[fPlayfair, fPlayfairIt, fInter].map((f) => <link rel="preload" href={f} as="font" type="font/woff2" crossorigin />)}
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex" />}

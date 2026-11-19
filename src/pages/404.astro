@@ -6,7 +6,7 @@ const mac = photo('detoure/macaron-pistache-seul')?.sizes[0];
 <Base page="404" title="Page introuvable" description="Cette page n'existe pas ou plus." noindex>
   <section class="lost">
     <div>
-      <p class="lost__num" aria-label="Erreur 404">
+      <p class="lost__num"><span class="sr-only">Erreur 404</span>
         <span aria-hidden="true">4</span>
         {mac ? <img src={mac.src} width={mac.w} height={mac.h} alt="" data-lost /> : <span aria-hidden="true">0</span>}
         <span aria-hidden="true">4</span>

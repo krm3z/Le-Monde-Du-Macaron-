@@ -25,7 +25,7 @@ const etoiles = Math.round(g.note);
     <div class="shop__side">
       <div class="shop__card" data-reveal>
         <h2>Adresse</h2>
-        <address class="shop__adresse">{boutique.adresse.rue}<br />{boutique.adresse.code_postal} {boutique.adresse.ville}</address>
+        <address class="shop__adresse">{boutique.adresse.rue}<br />{boutique.adresse.code_postal} <span style="white-space:nowrap">{boutique.adresse.ville}</span></address>
         <div class="btns">
           <a class="btn" href={g.lien_itineraire} rel="noopener" target="_blank">Itinéraire<span class="sr-only"> (nouvel onglet)</span></a>
           <a class="btn btn--ghost" href={telHref}>Appeler</a>
@@ -45,7 +45,20 @@ const etoiles = Math.round(g.note);
         <small>Relevé le {new Date(g.date_releve).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })} · <a href={g.lien_fiche} rel="noopener" target="_blank">Voir les avis<span class="sr-only"> (nouvel onglet)</span></a></small>
       </div>
       <div class="map" data-map>
-        <iframe title={`Plan OpenStreetMap : ${boutique.nom}, ${adresseLigne}`} src={osm} loading="lazy" referrerpolicy="no-referrer"></iframe>
+        <div class="map__ph">
+          <svg class="map__streets" viewBox="0 0 400 340" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+            <g fill="none" stroke="#F4EDE3" stroke-linecap="round">
+              <path d="M-20 210 C 90 190, 210 200, 420 150" stroke-width="22" />
+              <path d="M120 -20 L 170 360" stroke-width="12" /><path d="M300 -20 L 260 360" stroke-width="10" />
+              <path d="M-20 80 L 420 110" stroke-width="8" /><path d="M-20 300 L 420 280" stroke-width="8" />
+              <path d="M40 -20 L 70 360" stroke-width="6" /><path d="M360 -20 L 380 360" stroke-width="6" />
+            </g>
+            <text x="300" y="168" font-family="Inter, sans-serif" font-size="11" fill="#5C4A40" transform="rotate(-8 300 168)">Rue Nationale</text>
+          </svg>
+          <svg class="map__pin" viewBox="0 0 32 32" aria-hidden="true"><use href="#macaron-mark" /></svg>
+          <button class="btn map__btn" type="button" data-map-load data-src={osm} data-title={`Plan OpenStreetMap : ${boutique.nom}, ${adresseLigne}`}>Afficher le plan</button>
+          <small class="map__note">Le plan est chargé depuis OpenStreetMap seulement si vous cliquez.</small>
+        </div>
         <a class="map__credit" href={osmLien} rel="noopener" target="_blank">Agrandir le plan · © OpenStreetMap<span class="sr-only"> (nouvel onglet)</span></a>
       </div>
       <p style="font-size:.9rem;color:var(--choco-doux)">Pour une commande ou une question : <a href={mailHref()}>écrivez-nous</a> ou appelez-nous.</p>

@@ -22,12 +22,12 @@
 - [x] Commit « Construction du site »
 
 ## Étape 3 — Vérification
-- [ ] Build + serveur local
-- [ ] 375 / 768 / 1440 px, console, liens, menu, filtre, cartes, boutons
-- [ ] Lighthouse mobile ≥ 90 sur chaque page
-- [ ] Relecture des textes
-- [ ] Captures dans captures/ + regard critique
-- [ ] Commit « Vérification et corrections »
+- [x] Build + serveur local
+- [x] 375 / 768 / 1440 px, console, liens, menu, filtre, cartes, boutons
+- [x] Lighthouse mobile ≥ 90 sur chaque page
+- [x] Relecture des textes
+- [x] Captures dans captures/ + regard critique
+- [x] Commit « Vérification et corrections »
 
 ## Étape 4 — Déploiement (préparation)
 - [ ] Build compatible Cloudflare Pages, .gitignore
@@ -39,3 +39,4 @@
 - Création du suivi. Node.js manquant : décision → Node portable dans `.tools/` (voir RAPPORT.md).
 - Étape 1 finie : 94 produits (79 macarons + 15 calissons), 102 photos, 8 macarons détourés, boutique.json avec sources.
 - Étape 2 finie : Astro 7 statique, 6 pages + sitemap/robots, animations GSAP/Lenis, menu, filtre, cartes testés. Photos Litchi/Rose = logo du réseau → retirées.
+- Étape 3 finie : Lighthouse mobile 92-100 (a11y/BP/SEO 100), 0 débordement, 0 erreur console, 0 lien cassé. Plan OSM passé « au clic ».

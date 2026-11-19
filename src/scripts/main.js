@@ -83,7 +83,8 @@ if (macs.length) {
     })
       .to(macs, { keyframes: [{ scaleY: 0.86, scaleX: 1.08, duration: 0.09 }, { scaleY: 1, scaleX: 1, duration: 0.45, ease: 'elastic.out(1, 0.45)' }], stagger: 0.13, transformOrigin: '50% 100%' }, 0.85)
       .fromTo(lines, { yPercent: 110, opacity: 1 }, { yPercent: 0, opacity: 1, duration: 1.1, stagger: 0.12, ease: 'expo.out' }, '-=0.55')
-      .fromTo(fades, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.08, ease: 'power2.out' }, '-=0.7');
+      .fromTo(fades, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.08, ease: 'power2.out' }, '-=0.7')
+      .from($$('[data-hero-rise]'), { y: 24, duration: 0.9, ease: 'power3.out' }, '<0.1');
     // léger relief au défilement
     macs.forEach((m, i) => gsap.to(m, {
       yPercent: -40 - (i % 3) * 35, ease: 'none',
@@ -93,12 +94,14 @@ if (macs.length) {
 }
 
 /* Bandeau : défile en continu (CSS), ralentit au survol ou au toucher */
-const track = $('[data-marquee] .marquee__track');
-const anim = track?.getAnimations?.()[0];
-if (anim && !reduce) {
+const zone = $('[data-marquee]');
+if (zone && !reduce) {
+  const track = $('.marquee__track', zone);
   const speed = { r: 1 };
-  const go = (r) => gsap.to(speed, { r, duration: 0.8, ease: 'power2.out', onUpdate: () => { anim.playbackRate = speed.r; } });
-  const zone = $('[data-marquee]');
+  const go = (r) => gsap.to(speed, {
+    r, duration: 0.8, ease: 'power2.out', overwrite: true,
+    onUpdate: () => { const a = track.getAnimations?.()[0]; if (a) a.playbackRate = speed.r; },
+  });
   zone.addEventListener('pointerenter', () => go(0.18));
   zone.addEventListener('pointerleave', () => go(1));
   zone.addEventListener('touchstart', () => go(0.18), { passive: true });
@@ -180,7 +183,21 @@ $$('[data-count-to]').forEach((el) => {
   });
 });
 const map = $('[data-map]');
-if (map) gsap.to(map, { opacity: 1, duration: 1.4, ease: 'power2.out', scrollTrigger: { trigger: map, start: 'top 92%', once: true } });
+if (map) {
+  gsap.to(map, { opacity: 1, duration: 1.4, ease: 'power2.out', scrollTrigger: { trigger: map, start: 'top 92%', once: true } });
+  // le plan OpenStreetMap n'est chargé qu'au clic (aucune requête tierce avant)
+  $('[data-map-load]', map)?.addEventListener('click', (e) => {
+    const b = e.currentTarget;
+    const f = Object.assign(document.createElement('iframe'), { src: b.dataset.src, title: b.dataset.title });
+    f.style.opacity = '0';
+    const show = () => gsap.to(f, { opacity: 1, duration: 1.2, ease: 'power2.out' });
+    f.addEventListener('load', show);
+    setTimeout(show, 2500); // au cas où l'événement « load » tarde
+    map.prepend(f);
+    map.classList.add('is-loaded');
+    f.focus();
+  });
+}
 
 /* ---------- 404 : le macaron roule ---------- */
 const lost = $('[data-lost]');
