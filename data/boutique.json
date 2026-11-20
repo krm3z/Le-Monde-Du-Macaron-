@@ -9,7 +9,15 @@
   "salon_de_the": {
     "titre": "Le salon de thé",
     "texte": "À la boutique de Villefranche, on peut aussi s'installer : crêpes, gaufres, boissons chaudes, milk-shakes, glaces et pâtisseries, à déguster sur place.",
-    "carte": ["Crêpes", "Gaufres", "Boissons chaudes", "Boissons gourmandes", "Milk-shakes", "Glaces", "Pâtisseries"],
+    "carte": [
+      "Crêpes",
+      "Gaufres",
+      "Boissons chaudes",
+      "Boissons gourmandes",
+      "Milk-shakes",
+      "Glaces",
+      "Pâtisseries"
+    ],
     "_source": "Instagram de la boutique (stories à la une : Boissons gourmandes, Glaces, Crêpes, Pâtisseries, Nos milk-shake) et avis Google Maps (thèmes : crêpes, gaufres, boissons chaudes), relevés le 19/11/2026. Pas de prix ni de carte détaillée : à compléter avec la gérante."
   },
   "ville": "Villefranche-sur-Saône",
@@ -151,6 +159,42 @@
   },
   "createur": {
     "nom": "Kerem Uysal",
-    "email": "keremuysal19@icloud.com"
+    "email": "keremuysal19@icloud.com",
+    "linkedin": "https://www.linkedin.com/in/kerem-uysal-0528823a9/"
+  },
+  "avis": {
+    "_lisez_moi": "Les avis Google affichés en bandeau sur l'accueil. Copiez ici vos avis préférés depuis votre fiche Google (texte, prénom + initiale, note). Ne mettez que de vrais avis. Tant qu'un avis contient [À REMPLACER], il n'est pas affiché.",
+    "liste": [
+      {
+        "texte": "[À REMPLACER]",
+        "auteur": "[À REMPLACER]",
+        "note": 5
+      },
+      {
+        "texte": "[À REMPLACER]",
+        "auteur": "[À REMPLACER]",
+        "note": 5
+      },
+      {
+        "texte": "[À REMPLACER]",
+        "auteur": "[À REMPLACER]",
+        "note": 5
+      },
+      {
+        "texte": "[À REMPLACER]",
+        "auteur": "[À REMPLACER]",
+        "note": 5
+      },
+      {
+        "texte": "[À REMPLACER]",
+        "auteur": "[À REMPLACER]",
+        "note": 5
+      },
+      {
+        "texte": "[À REMPLACER]",
+        "auteur": "[À REMPLACER]",
+        "note": 5
+      }
+    ]
   }
 }

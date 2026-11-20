@@ -30,6 +30,9 @@ const a = boutique.adresse;
   <div class="footer__bottom">
     <a href="/mentions-legales/">Mentions légales</a>
     <span>Aucun cookie, aucun suivi.</span>
-    <a class="footer__credit" href={`mailto:${boutique.createur.email}`}>Site créé par {boutique.createur.nom}</a>
+    <span class="footer__createur">
+      <a class="footer__credit" href={`mailto:${boutique.createur.email}`}>Site créé par {boutique.createur.nom}</a>
+      <a class="footer__credit" href={boutique.createur.linkedin} rel="noopener" target="_blank">LinkedIn<span class="sr-only"> de {boutique.createur.nom} (nouvel onglet)</span></a>
+    </span>
   </div>
 </footer>

@@ -1,0 +1,31 @@
+---
+// Bande « avis Google » : note + nombre d'avis en grand, puis les avis choisis qui défilent.
+// Les avis viennent de data/boutique.json → avis.liste (seuls les avis remplis sont affichés).
+import Etoiles from './Etoiles.astro';
+import { boutique, noteFr, isTodo } from '../lib/site.js';
+const g = boutique.google;
+const avis = (boutique.avis?.liste ?? []).filter((a) => !isTodo(a.texte) && !isTodo(a.auteur));
+---
+<section class="avis-bande nuit" aria-labelledby="titre-avis-google">
+  <div class="cadre avis-bande__haut">
+    <p class="mega avis-bande__note" aria-hidden="true">{noteFr(g.note)}</p>
+    <div>
+      <h2 class="h2" id="titre-avis-google" style="color:var(--blanc)" data-reveal="lignes">{g.nombre_avis} avis Google</h2>
+      <div class="avis-bande__etoiles"><Etoiles note={g.note} /></div>
+      <p class="legende">Note de {noteFr(g.note)} sur 5 · <a class="lien" href={g.lien_fiche} rel="noopener" target="_blank">lire les avis sur Google<span class="sr-only"> (nouvel onglet)</span></a></p>
+    </div>
+  </div>
+  {avis.length > 0 && (
+    <div class="avis-bande__piste-cadre">
+      <ul class="avis-bande__piste" role="list">
+        {[...avis, ...avis].map((a, i) => (
+          <li class="avis-carte" aria-hidden={i >= avis.length ? 'true' : undefined}>
+            <span class="avis-carte__etoiles" aria-label={`${a.note} étoiles sur 5`}>{'★'.repeat(a.note)}</span>
+            <blockquote>« {a.texte} »</blockquote>
+            <span class="meta">{a.auteur} · avis Google</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+</section>

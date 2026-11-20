@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Img from '../components/Img.astro';
 import Filet from '../components/Filet.astro';
+import AvisGoogle from '../components/AvisGoogle.astro';
 import { boutique, produits, photo, telHref, noteFr, adresseLigne, horairesGroupes, nbProduits } from '../lib/site.js';
 
 // La pile de la vitrine (du bas vers le haut) : macarons détourés « seuls »
@@ -123,6 +124,8 @@ const motsNom = [['Le', 'Monde'], ['du'], ['Macaron'], ['Villefranche']];
       <button class="btn mur__plus" type="button" aria-expanded="false" data-mur-plus>Voir les {nbMacarons} parfums</button>
     </div>
   </section>
+
+  <AvisGoogle />
 
   <section class="section jour salon" aria-labelledby="titre-salon" style="padding-top:0">
     <div class="cadre">

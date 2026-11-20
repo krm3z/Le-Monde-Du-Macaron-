@@ -346,6 +346,25 @@ mark.todo { background: #FFE58A; color: #322C29; padding: 0 .3em; font: 600 .85e
 .salon__img img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.32); transition: transform .9s var(--ease-maison); }
 .salon__photo:hover .salon__img img { transform: scale(1.38); }
 
+/* Bande des avis Google (accueil) */
+.avis-bande { padding-block: clamp(4.5rem, 9vw, 8rem); overflow: hidden; }
+.avis-bande__haut { display: grid; gap: 1rem 3rem; align-items: end; margin-bottom: clamp(2rem, 5vw, 3.5rem); }
+@media (min-width: 900px) { .avis-bande__haut { grid-template-columns: auto 1fr; } }
+.avis-bande__note { color: var(--blanc); }
+.avis-bande__etoiles { margin: 1rem 0 .6rem; }
+.avis-bande .etoiles { width: clamp(150px, 20vw, 220px); height: auto; }
+.avis-bande .etoiles__fond path { fill: rgba(255, 255, 255, .12); stroke: rgba(255, 255, 255, .25); }
+.avis-bande__piste { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.2rem; width: max-content; animation: avis-defile 70s linear infinite; }
+.avis-bande__piste-cadre:hover .avis-bande__piste, .avis-bande__piste-cadre:focus-within .avis-bande__piste { animation-play-state: paused; }
+@keyframes avis-defile { to { transform: translateX(-50%); } }
+.avis-carte { width: clamp(260px, 30vw, 380px); display: grid; gap: .8rem; align-content: start; padding: 1.4rem 1.5rem; border: 1px solid var(--filet-nuit); }
+.avis-carte__etoiles { color: var(--fuchsia); letter-spacing: .15em; }
+.avis-carte blockquote { margin: 0; font: italic 400 1.1rem/1.45 var(--serif); color: var(--blanc); }
+@media (prefers-reduced-motion: reduce) { .avis-bande__piste { animation: none; } .avis-bande__piste-cadre { overflow-x: auto; } }
+
+/* Crédit du créateur (pied de page) */
+.footer__createur { display: inline-flex; gap: 1rem; }
+
 /* Mur de macarons (accueil), rangé par couleur */
 .mur__onglets { display: flex; gap: .3rem; margin-bottom: 1.6rem; border-bottom: 1px solid var(--filet); }
 .mur__onglets button { min-height: 44px; padding: .5rem 1rem; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; background: none; color: var(--doux); font: 500 .95rem var(--sans); cursor: pointer; }
