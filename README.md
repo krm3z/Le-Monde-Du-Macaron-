@@ -6,6 +6,26 @@ Projet client réalisé par **Kerem Uysal** (micro-entreprise : développement w
 
 ![Accueil](captures/accueil-ordinateur-ecran.jpg)
 
+| Téléphone | Nos macarons | La boutique |
+|---|---|---|
+| ![Accueil sur téléphone](captures/accueil-telephone-ecran.jpg) | ![Nos macarons](captures/macarons-ordinateur-ecran.jpg) | ![La boutique](captures/boutique-ordinateur-ecran.jpg) |
+
+## Le projet en bref
+- **Client réel** : une boutique de centre-ville (macarons, coffrets, salon de thé). Prestation vendue après démarchage en boutique, avec devis.
+- **Besoin** : être trouvée sur Google, donner les horaires et l'adresse en un coup d'œil sur téléphone, présenter les coffrets pour les événements (conscrits, mariages, entreprises), sans commande en ligne.
+- **Mon rôle** : tout, de A à Z : collecte et structuration du contenu (scraping du catalogue du réseau, 101 fiches produits), direction artistique, développement, accessibilité, performance, préparation du déploiement.
+- **Contraintes** : hébergement gratuit (100 % statique), RGPD (zéro cookie, zéro requête tierce), contenu modifiable sans code, charte du réseau (noir, blanc, fuchsia), aucune information inventée (horaires, prix, allergènes).
+
+## Défis techniques
+- **Détourage automatique** de 77 photos produit sans IA ni service externe : remplissage par diffusion depuis les bords, comparaison au fond ligne par ligne (dégradés de studio) et suppression des ombres grises neutres, le tout avec `sharp`.
+- **Animations ambitieuses mais légères** : intro de la page d'accueil en CSS pur dès le premier rendu (pas de pénalité LCP), GSAP chargé une fois et un module par page en import dynamique, mode « mouvement réduit » complet.
+- **Filtre animé** de 100+ cartes (GSAP Flip) avec retournement 3D accessible au clavier (`aria-pressed`, faces masquées aux lecteurs d'écran).
+- **Pancarte Ouvert / Fermé** calculée côté client à l'heure de Paris depuis les horaires du JSON.
+- **Qualité vérifiée par scripts** : Puppeteer (débordements, erreurs console, liens, captures image par image des animations) et Lighthouse en boucle.
+
+## Compétences mises en œuvre
+Astro · JavaScript · CSS moderne (grid, `clamp()`, container queries, View Transitions) · GSAP · accessibilité WCAG 2.2 · SEO local (schema.org) · Node.js / sharp · Python (collecte de données) · Puppeteer / Lighthouse · Git
+
 ## Ce que fait le site
 - **Accueil « vitrine de nuit »** : 8 macarons détourés s'empilent un par un sur une étagère, puis le nom de la boutique apparaît ; pancarte « Ouvert / Fermé » calculée à l'heure de Paris ; bandeau de macarons qui ralentit au survol (avec bouton pause) ; index des 79 parfums avec aperçu du macaron qui suit le curseur ; salon de thé ; coffrets.
 - **Nos macarons** : 101 produits (macarons sucrés et salés, calissons, salon de thé), filtre animé (GSAP Flip), cartes qui se retournent en 3D au toucher et au clavier pour montrer les allergènes.
