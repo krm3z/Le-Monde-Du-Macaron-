@@ -336,3 +336,12 @@ mark.todo { background: #FFE58A; color: #322C29; padding: 0 .3em; font: 600 .85e
   .fiche__btn[aria-pressed='true'] .fiche__verso { opacity: 1; }
   .fiche__btn[aria-pressed='true'] .fiche__recto { opacity: 0; }
 }
+
+/* Salon de thé : vraies photos (cadre carré) au lieu de détourés */
+.fiche--salon .fiche__objet img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.fiche--salon .fiche__objet::after { display: none; }
+.salon__photos { display: flex; gap: clamp(.8rem, 2vw, 1.5rem); overflow-x: auto; scrollbar-width: none; padding-bottom: .5rem; margin-bottom: 1rem; }
+.salon__photo { flex: none; width: clamp(180px, 22vw, 300px); text-decoration: none; display: grid; gap: .6rem; }
+.salon__img { display: block; aspect-ratio: 4 / 5; overflow: hidden; background: var(--gris); }
+.salon__img img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.32); transition: transform .9s var(--ease-maison); }
+.salon__photo:hover .salon__img img { transform: scale(1.38); }

@@ -2258,5 +2258,110 @@
     "src": "/photos/detoure/macaron-tomate-basilic.webp"
    }
   ]
+ },
+ "salon-boissons-chaudes": {
+  "ratio": 0.666748046875,
+  "sizes": [
+   {
+    "w": 600,
+    "h": 400,
+    "src": "/photos/salon-boissons-chaudes-600.webp"
+   },
+   {
+    "w": 1200,
+    "h": 800,
+    "src": "/photos/salon-boissons-chaudes-1200.webp"
+   }
+  ]
+ },
+ "salon-boissons-gourmandes": {
+  "ratio": 1.3328125,
+  "sizes": [
+   {
+    "w": 600,
+    "h": 800,
+    "src": "/photos/salon-boissons-gourmandes-600.webp"
+   },
+   {
+    "w": 1200,
+    "h": 1599,
+    "src": "/photos/salon-boissons-gourmandes-1200.webp"
+   }
+  ]
+ },
+ "salon-crepes": {
+  "ratio": 0.6134699853587116,
+  "sizes": [
+   {
+    "w": 600,
+    "h": 368,
+    "src": "/photos/salon-crepes-600.webp"
+   },
+   {
+    "w": 1200,
+    "h": 736,
+    "src": "/photos/salon-crepes-1200.webp"
+   }
+  ]
+ },
+ "salon-gaufres": {
+  "ratio": 0.7585185185185185,
+  "sizes": [
+   {
+    "w": 600,
+    "h": 455,
+    "src": "/photos/salon-gaufres-600.webp"
+   },
+   {
+    "w": 1200,
+    "h": 910,
+    "src": "/photos/salon-gaufres-1200.webp"
+   }
+  ]
+ },
+ "salon-glaces": {
+  "ratio": 0.75,
+  "sizes": [
+   {
+    "w": 600,
+    "h": 800,
+    "src": "/photos/salon-glaces-600.webp"
+   },
+   {
+    "w": 1200,
+    "h": 1600,
+    "src": "/photos/salon-glaces-1200.webp"
+   }
+  ]
+ },
+ "salon-milk-shakes": {
+  "ratio": 1.3333333333333333,
+  "sizes": [
+   {
+    "w": 600,
+    "h": 800,
+    "src": "/photos/salon-milk-shakes-600.webp"
+   },
+   {
+    "w": 1200,
+    "h": 1600,
+    "src": "/photos/salon-milk-shakes-1200.webp"
+   }
+  ]
+ },
+ "salon-patisseries": {
+  "ratio": 0.753125,
+  "sizes": [
+   {
+    "w": 600,
+    "h": 452,
+    "src": "/photos/salon-patisseries-600.webp"
+   },
+   {
+    "w": 1200,
+    "h": 904,
+    "src": "/photos/salon-patisseries-1200.webp"
+   }
+  ]
  }
 }

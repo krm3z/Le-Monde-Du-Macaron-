@@ -63,11 +63,6 @@ export default function init({ gsap, ScrollTrigger, lenis, reduce, $, $$ }) {
     gsap.fromTo(b, { z: 0 }, { z: 60, duration: 0.4, yoyo: true, repeat: 1, ease: 'power1.inOut' });
   });
 
-  // Fiches « posées » par lots
-  if (!reduce) {
-    ScrollTrigger.batch(fiches, { start: 'top 92%', once: true, onEnter: (els) => gsap.from(els, { opacity: 0, y: -10, duration: 0.6, stagger: 0.06, ease: 'maison' }) });
-  }
-
   // Arrivée depuis l'accueil (#parfum) : la fiche est mise en valeur
   const cible = location.hash ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
   if (cible?.classList.contains('fiche')) {

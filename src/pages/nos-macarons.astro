@@ -11,8 +11,9 @@ const filtres = [
   { id: 'salé', label: 'Salé', n: nbProduits('salé') },
   { id: 'coffret', label: 'Coffrets', n: nbProduits('coffret') },
   { id: 'autre', label: 'Calissons', n: nbProduits('autre') },
+  { id: 'salon', label: 'Salon de thé', n: nbProduits('salon') },
 ].filter((f) => f.n > 0);
-const famille = { 'sucré': 'Macaron sucré', 'salé': 'Macaron salé', coffret: 'Coffret', autre: 'Calisson' };
+const famille = { 'sucré': 'Macaron sucré', 'salé': 'Macaron salé', coffret: 'Coffret', autre: 'Calisson', salon: 'Salon de thé · sur place' };
 ---
 <Base
   page="macarons"
@@ -38,7 +39,7 @@ const famille = { 'sucré': 'Macaron sucré', 'salé': 'Macaron salé', coffret:
       {produits.map((p) => {
         const d = p.famille === 'macaron' ? photo(`detoure/${p.photo}`)?.sizes[0] : null;
         return (
-          <li class:list={['fiche', { 'fiche--sale': p.categorie === 'salé', 'fiche--calisson': p.famille !== 'macaron' }]} id={p.id} data-cat={p.categorie}>
+          <li class:list={['fiche', { 'fiche--sale': p.categorie === 'salé', 'fiche--calisson': p.famille === 'calisson', 'fiche--salon': p.famille === 'salon' }]} id={p.id} data-cat={p.categorie}>
             <button class="fiche__btn" type="button" aria-pressed="false" data-fiche>
               <span class="fiche__face fiche__recto">
                 <span class="fiche__objet">
@@ -50,6 +51,7 @@ const famille = { 'sucré': 'Macaron sucré', 'salé': 'Macaron salé', coffret:
                   <span class="fiche__nom">{p.nom}</span>
                   <span class="fiche__famille meta">{famille[p.categorie]}</span>
                   <span class="fiche__dos">Allergènes au dos</span>
+                  {p.photo_illustration && <span class="fiche__famille meta">Photo d’illustration</span>}
                 </span>
               </span>
               <span class="fiche__face fiche__verso" aria-hidden="true">

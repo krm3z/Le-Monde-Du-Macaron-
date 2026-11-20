@@ -127,12 +127,12 @@ function apparitions() {
     }
     if (type === 'pose') {
       gsap.set(el, { opacity: 1 });
-      gsap.from(el.children, { opacity: 0, y: -10, duration: 0.6, stagger: 0.08, ease: 'maison', scrollTrigger: st });
+      gsap.fromTo(el.children, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: 'maison', scrollTrigger: st });
       return;
     }
     if (type === 'liste') {
       gsap.set(el, { opacity: 1 });
-      gsap.from(el.children, { opacity: 0, duration: 0.5, stagger: 0.05, scrollTrigger: st });
+      gsap.fromTo(el.children, { opacity: 0 }, { opacity: 1, duration: 0.5, stagger: 0.05, scrollTrigger: st });
       return;
     }
     gsap.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.6, ease: 'power1.out', scrollTrigger: st });

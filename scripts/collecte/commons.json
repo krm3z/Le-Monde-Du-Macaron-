@@ -1,0 +1,51 @@
+{
+ "crepes": {
+  "fichier": "assets/photos/salon-crepes.jpg",
+  "titre": "File:Pfannkuchen mit Zucker.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pfannkuchen_mit_Zucker.jpg",
+  "auteur": "Jan Homann",
+  "licence": "Public domain"
+ },
+ "milk-shakes": {
+  "fichier": "assets/photos/salon-milk-shakes.jpg",
+  "titre": "File:GLASS OF HAPPINESS.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:GLASS_OF_HAPPINESS.jpg",
+  "auteur": "Elakkiya Loganayaki",
+  "licence": "CC0"
+ },
+ "boissons-chaudes": {
+  "fichier": "assets/photos/salon-boissons-chaudes.jpg",
+  "titre": "File:Cup of coffee with latte art 2016.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cup_of_coffee_with_latte_art_2016.jpg",
+  "auteur": "Abdulrohmatt",
+  "licence": "CC BY-SA 4.0"
+ },
+ "glaces": {
+  "fichier": "assets/photos/salon-glaces.jpg",
+  "titre": "File:Coupe glacée à la pêche et sa liqueur (O'petits oignons).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Coupe_glac%C3%A9e_%C3%A0_la_p%C3%AAche_et_sa_liqueur_(O%27petits_oignons).jpg",
+  "auteur": "Tangopaso",
+  "licence": "Public domain"
+ },
+ "gaufres": {
+  "fichier": "assets/photos/salon-gaufres.jpg",
+  "titre": "File:Belgische waffeln.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Belgische_waffeln.jpg",
+  "auteur": "Andreas Kaiser, Neu-Ulm Pfuhl, Germany",
+  "licence": "CC BY-SA 3.0 de"
+ },
+ "boissons-gourmandes": {
+  "fichier": "assets/photos/salon-boissons-gourmandes.jpg",
+  "titre": "File:Frappe - coffee milkshake with whipped cream and chocolate (KETO, LCHF, Low Carb, Gluten free, FIT) - 52774791604.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Frappe_-_coffee_milkshake_with_whipped_cream_and_chocolate_(KETO,_LCHF,_Low_Carb,_Gluten_free,_FIT)_-_52774791604.jpg",
+  "auteur": "Ewelina Podrez-Siama",
+  "licence": "CC BY 2.0"
+ },
+ "patisseries": {
+  "fichier": "assets/photos/salon-patisseries.jpg",
+  "titre": "File:Pistachio eclair - Milfey Patisserie 2026-05-02.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pistachio_eclair_-_Milfey_Patisserie_2026-05-02.jpg",
+  "auteur": "Andy Li",
+  "licence": "CC0"
+ }
+}

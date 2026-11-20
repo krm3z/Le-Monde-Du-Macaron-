@@ -2,7 +2,8 @@
 import Base from '../layouts/Base.astro';
 import Val from '../components/Val.astro';
 import Filet from '../components/Filet.astro';
-import { boutique, adresseLigne } from '../lib/site.js';
+import { boutique, adresseLigne, produits } from '../lib/site.js';
+const illus = produits.filter((p) => p.credit_photo);
 const m = boutique.mentions_legales;
 const sommaire = [
   ['editeur', 'Éditeur'], ['hebergeur', 'Hébergeur'], ['conception', 'Conception'],
@@ -46,6 +47,7 @@ const sommaire = [
       <section id="credits">
         <h2>Crédits</h2>
         <p>Photos des produits et logo : réseau {boutique.reseau} (mondedumacaron.fr), utilisés avec son autorisation. <mark class="todo">[À REMPLACER : confirmer l’accord du réseau]</mark></p>
+        <p>Photos d’illustration du salon de thé (Wikimedia Commons, licences libres) : {illus.map((p, i) => <>{i > 0 && ' ; '}{p.nom} — {p.credit_photo}</>)}.</p>
         <p>Plan interactif : © les contributeurs d’OpenStreetMap.</p>
       </section>
       <section id="donnees">

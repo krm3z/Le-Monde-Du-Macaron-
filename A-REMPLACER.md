@@ -4,7 +4,6 @@ Sur le site, chaque valeur manquante s'affiche **surlignée en jaune** (`[À REM
 
 | # | À remplir | Où ça s'affiche | Fichier à modifier | Ce que j'ai trouvé |
 |---|---|---|---|---|
-| 2 | **E-mail de la boutique** | La boutique, Coffrets & événements (bouton « Envoyer un mail »), Mentions légales | `data/boutique.json` → `email` | Introuvable. Tant qu'il manque, le bouton ouvre la messagerie avec l'objet pré-rempli mais sans destinataire. |
 | 3 | **Allergènes** de chaque produit | Nos macarons (dos des cartes) | `data/produits.json` → `allergenes` (94 produits) | Le réseau n'affiche aucun allergène. À recopier depuis la fiche allergènes de la boutique. |
 | 4 | Prix (facultatif) | Nos macarons (dos des cartes) | `data/produits.json` → `prix` (ex. `"1,90 €"`) | Aucun prix sur le site du réseau. Laisser `null` pour ne rien afficher. |
 | 5 | Raison sociale, forme juridique, capital, SIRET, RCS, TVA | Mentions légales | `data/boutique.json` → `mentions_legales` | À demander à la gérante (extrait Kbis). |
@@ -18,3 +17,4 @@ Sur le site, chaque valeur manquante s'affiche **surlignée en jaune** (`[À REM
 - Les descriptions des 94 produits (rédigées par moi) : `data/produits.json` → `description`.
 - La note Google (4,6) et le nombre d'avis (719), relevés le 19/11/2026 : `data/boutique.json` → `google`.
 - La liste des parfums vendus à Villefranche : le catalogue vient du réseau, la boutique n'a peut-être pas tout. Retirer un produit = supprimer son bloc dans `data/produits.json`.
+| 10 | **Vraies photos du salon de thé** (crêpes, gaufres, milk-shakes, boissons, glaces, pâtisseries) | Accueil (salon de thé), Nos macarons (filtre Salon de thé) | Déposer `assets/photos/salon-<nom>.jpg` (même nom), puis retirer `"photo_illustration": true` et `credit_photo` dans `data/produits.json` | Photos d'illustration libres de droits (Wikimedia Commons) en attendant. |

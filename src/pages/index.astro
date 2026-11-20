@@ -114,6 +114,15 @@ const motsNom = [['Le', 'Monde'], ['du'], ['Macaron'], ['Villefranche']];
       <ul class="salon__carte" data-reveal="pose">
         {s.carte.map((c) => <li>{c}</li>)}
       </ul>
+      <div class="salon__photos">
+        {produits.filter((p) => p.famille === 'salon' && p.photo).map((p) => (
+          <a class="salon__photo" href={`/nos-macarons/?filtre=salon#${p.id}`}>
+            <span class="salon__img" data-reveal="image"><Img name={p.photo} alt={p.nom} sizes="(min-width: 900px) 22vw, 60vw" /></span>
+            <span class="legende">{p.nom}</span>
+          </a>
+        ))}
+      </div>
+      <p class="meta" style="margin-bottom:1.5rem">Photos d’illustration, en attendant les photos de la boutique.</p>
       <p class="texte" data-reveal="fondu">{s.texte}</p>
       <a class="lien" href="/la-boutique/">Voir la boutique et ses horaires</a>
     </div>
