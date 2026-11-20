@@ -118,7 +118,7 @@ Toutes les photos viennent du site du réseau Le Monde du Macaron (mondedumacaro
 | assets/photos/salon-crepes.jpg | https://commons.wikimedia.org/wiki/File:Pfannkuchen_mit_Zucker.jpg | Jan Homann | Public domain |
 | assets/photos/salon-milk-shakes.jpg | https://commons.wikimedia.org/wiki/File:GLASS_OF_HAPPINESS.jpg | Elakkiya Loganayaki | CC0 |
 | assets/photos/salon-boissons-chaudes.jpg | https://commons.wikimedia.org/wiki/File:Cup_of_coffee_with_latte_art_2016.jpg | Abdulrohmatt | CC BY-SA 4.0 |
-| assets/photos/salon-glaces.jpg | https://commons.wikimedia.org/wiki/File:Coupe_glac%C3%A9e_%C3%A0_la_p%C3%AAche_et_sa_liqueur_(O%27petits_oignons).jpg | Tangopaso | Public domain |
+| assets/photos/salon-glaces.jpg | https://commons.wikimedia.org/wiki/File:Bowl_~_Ice_cream.jpg | Mitchellhobbs | CC BY-SA 4.0 |
 | assets/photos/salon-gaufres.jpg | https://commons.wikimedia.org/wiki/File:Belgische_waffeln.jpg | Andreas Kaiser, Neu-Ulm Pfuhl, Germany | CC BY-SA 3.0 de |
 | assets/photos/salon-boissons-gourmandes.jpg | https://commons.wikimedia.org/wiki/File:Frappe_-_coffee_milkshake_with_whipped_cream_and_chocolate_(KETO,_LCHF,_Low_Carb,_Gluten_free,_FIT)_-_52774791604.jpg | Ewelina Podrez-Siama | CC BY 2.0 |
 | assets/photos/salon-patisseries.jpg | https://commons.wikimedia.org/wiki/File:Pistachio_eclair_-_Milfey_Patisserie_2026-05-02.jpg | Andy Li | CC0 |
