@@ -2,7 +2,8 @@
 import Base from '../layouts/Base.astro';
 import Img from '../components/Img.astro';
 import Val from '../components/Val.astro';
-import { boutique, produits, nbProduits } from '../lib/site.js';
+import Filet from '../components/Filet.astro';
+import { boutique, produits, photo, nbProduits } from '../lib/site.js';
 
 const filtres = [
   { id: 'tout', label: 'Tout', n: produits.length },
@@ -11,56 +12,63 @@ const filtres = [
   { id: 'coffret', label: 'Coffrets', n: nbProduits('coffret') },
   { id: 'autre', label: 'Calissons', n: nbProduits('autre') },
 ].filter((f) => f.n > 0);
-const etiquette = { 'sucré': 'Macaron sucré', 'salé': 'Macaron salé', coffret: 'Coffret', autre: 'Calisson' };
+const famille = { 'sucré': 'Macaron sucré', 'salé': 'Macaron salé', coffret: 'Coffret', autre: 'Calisson' };
 ---
 <Base
   page="macarons"
   title="Nos macarons sucrés et salés"
-  description={`${nbProduits('sucré')} macarons sucrés, ${nbProduits('salé')} macarons salés et des calissons à Villefranche-sur-Saône. Parfums, descriptions et allergènes.`}
+  description={`${nbProduits('sucré')} macarons sucrés, ${nbProduits('salé')} macarons salés et ${nbProduits('autre')} calissons au Monde du Macaron Villefranche : parfums, descriptions et allergènes.`}
 >
-  <header class="page-head wrap">
-    <p class="eyebrow" data-reveal>La carte</p>
-    <h1 class="h-display" data-reveal>Nos <em>macarons</em></h1>
-    <p class="lead" data-reveal>{boutique.textes.intro_macarons}</p>
+  <header class="entete jour cadre">
+    <h1>Nos macarons</h1>
+    <Filet />
+    <p class="texte" data-reveal="fondu">{boutique.textes.intro_macarons}</p>
   </header>
 
-  <section class="wrap" style="padding-bottom:clamp(4rem,10vw,8rem)" aria-label="Liste des produits">
-    <div class="filters" role="group" aria-label="Filtrer les produits" data-filters>
+  <section class="cadre" style="padding-bottom:clamp(4rem,10vw,8rem)" aria-label="Liste des produits">
+    <div class="filtres" role="group" aria-label="Filtrer les produits" data-filtres>
       {filtres.map((f, i) => (
-        <button type="button" data-filter={f.id} aria-pressed={i === 0 ? 'true' : 'false'}>{f.label}<sup>{f.n}</sup></button>
+        <button type="button" data-filtre={f.id} aria-pressed={i === 0 ? 'true' : 'false'}>{f.label}<sup>{f.n}</sup></button>
       ))}
+      <span class="filtres__trait" aria-hidden="true" data-trait></span>
     </div>
-    <p class="count" aria-live="polite" data-count>{produits.length} produits affichés</p>
+    <p class="compte meta"><span aria-hidden="true" data-compte>{produits.length}</span><span aria-hidden="true"> produits</span><span class="sr-only" aria-live="polite" data-annonce>{produits.length} produits affichés</span></p>
 
-    <ul class="grid" role="list" data-grid style="list-style:none;margin:0;padding:0">
-      {produits.map((p) => (
-        <li class="card" id={p.id} data-cat={p.categorie}>
-          <button class="card__btn" type="button" aria-pressed="false" data-flip>
-            <span class="card__face card__front">
-              <span class="card__img"><Img name={p.photo} alt={`${p.famille === 'macaron' ? 'Macarons' : ''} ${p.nom}`.trim()} sizes="(min-width: 1200px) 25vw, (min-width: 600px) 45vw, 90vw" /></span>
-              <span class="card__body">
-                <span class="card__tag">{etiquette[p.categorie]}</span>
-                <span class="card__name">{p.nom}</span>
-                <span class="card__hint">Allergènes au dos</span>
+    <ul class="nuancier" role="list" data-nuancier>
+      {produits.map((p) => {
+        const d = p.famille === 'macaron' ? photo(`detoure/${p.photo}`)?.sizes[0] : null;
+        return (
+          <li class:list={['fiche', { 'fiche--sale': p.categorie === 'salé', 'fiche--calisson': p.famille !== 'macaron' }]} id={p.id} data-cat={p.categorie}>
+            <button class="fiche__btn" type="button" aria-pressed="false" data-fiche>
+              <span class="fiche__face fiche__recto">
+                <span class="fiche__objet">
+                  {d ? <img src={d.src} width={d.w} height={d.h} alt={`Macaron ${p.nom}`} loading="lazy" decoding="async" />
+                    : p.photo ? <Img name={p.photo} alt={p.nom} sizes="300px" />
+                    : <span class="photo-a-venir">Photo à venir</span>}
+                </span>
+                <span>
+                  <span class="fiche__nom">{p.nom}</span>
+                  <span class="fiche__famille meta">{famille[p.categorie]}</span>
+                  <span class="fiche__dos">Allergènes au dos</span>
+                </span>
               </span>
-            </span>
-            <span class="card__face card__back" aria-hidden="true">
-              <span>
-                <span class="card__label">{p.nom}</span>
-                <span style="display:block;margin-bottom:1.2rem">{p.description}</span>
-                <span class="card__label">Allergènes</span>
-                <span class="card__allergenes"><Val v={p.allergenes} /></span>
+              <span class="fiche__face fiche__verso" aria-hidden="true">
+                <span>
+                  <span class="t">{p.nom}</span>
+                  <span style="display:block;margin-bottom:1em">{p.description}</span>
+                  <span class="l">Allergènes</span>
+                  <span><Val v={p.allergenes} /></span>
+                </span>
+                <span>
+                  {p.prix && <span class="t">{p.prix}</span>}
+                  <small>Un doute ? Demandez conseil en boutique.</small>
+                </span>
               </span>
-              <span>
-                {p.prix && <span style="display:block;font:500 1.3rem var(--serif);margin-bottom:.4rem">{p.prix}</span>}
-                <small>Un doute ? Demandez conseil en boutique.</small>
-              </span>
-            </span>
-          </button>
-        </li>
-      ))}
+            </button>
+          </li>
+        );
+      })}
     </ul>
-
-    <p class="aussi" data-reveal>{boutique.textes.aussi_en_boutique}</p>
+    <p class="aussi legende">{boutique.textes.aussi_en_boutique}</p>
   </section>
 </Base>

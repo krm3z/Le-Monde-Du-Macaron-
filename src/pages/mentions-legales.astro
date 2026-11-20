@@ -1,44 +1,62 @@
 ---
 import Base from '../layouts/Base.astro';
 import Val from '../components/Val.astro';
+import Filet from '../components/Filet.astro';
 import { boutique, adresseLigne } from '../lib/site.js';
 const m = boutique.mentions_legales;
+const sommaire = [
+  ['editeur', 'Éditeur'], ['hebergeur', 'Hébergeur'], ['conception', 'Conception'],
+  ['credits', 'Crédits'], ['donnees', 'Données et cookies'], ['produits', 'Produits'],
+];
 ---
-<Base page="legal" title="Mentions légales" description="Mentions légales du site de la boutique Le Monde du Macaron de Villefranche-sur-Saône : éditeur, hébergeur, crédits et données personnelles.">
-  <header class="page-head wrap">
-    <h1 class="h-display">Mentions <em>légales</em></h1>
+<Base page="legal" title="Mentions légales" description={`Mentions légales du site du ${boutique.nom_complet} : éditeur, hébergeur, crédits et données personnelles.`}>
+  <header class="entete jour cadre">
+    <h1>Mentions légales</h1>
+    <Filet />
   </header>
-  <div class="wrap legal" style="padding-bottom:clamp(4rem,10vw,8rem)">
-    <h2>Éditeur du site</h2>
-    <dl>
-      <dt>Boutique</dt><dd>{boutique.nom} {boutique.ville} (franchise du réseau Le Monde du Macaron)</dd>
-      <dt>Société</dt><dd><Val v={m.raison_sociale} /></dd>
-      <dt>Forme juridique</dt><dd><Val v={m.forme_juridique} /></dd>
-      <dt>Capital</dt><dd><Val v={m.capital} /></dd>
-      <dt>Adresse</dt><dd>{adresseLigne}</dd>
-      <dt>Téléphone</dt><dd>{boutique.telephone}</dd>
-      <dt>E-mail</dt><dd><Val v={boutique.email} /></dd>
-      <dt>SIRET</dt><dd><Val v={m.siret} /></dd>
-      <dt>RCS</dt><dd><Val v={m.rcs} /></dd>
-      <dt>TVA intracom.</dt><dd><Val v={m.tva} /></dd>
-      <dt>Responsable de la publication</dt><dd><Val v={m.responsable_publication} /></dd>
-    </dl>
-
-    <h2>Hébergeur</h2>
-    <p>Cloudflare, Inc. (service Cloudflare Pages)<br />101 Townsend St., San Francisco, CA 94107, États-Unis<br />Téléphone : +1 (650) 319-8930 · <a href="https://www.cloudflare.com" rel="noopener">www.cloudflare.com</a></p>
-
-    <h2>Conception et réalisation</h2>
-    <p>{boutique.createur.nom}, micro-entrepreneur · <a href={`mailto:${boutique.createur.email}`}>{boutique.createur.email}</a></p>
-
-    <h2>Crédits photos</h2>
-    <p>Photos des produits : réseau Le Monde du Macaron (mondedumacaron.fr), utilisées avec son autorisation. <mark class="todo">[À REMPLACER : confirmer l’accord du réseau]</mark></p>
-    <p>Plan : © les contributeurs d’OpenStreetMap.</p>
-
-    <h2>Données personnelles et cookies</h2>
-    <p>Ce site ne dépose aucun cookie, n’utilise aucun outil de mesure d’audience et ne collecte aucune donnée personnelle. Il n’y a ni formulaire, ni compte client. Les liens « Appeler » et « Envoyer un mail » ouvrent simplement votre téléphone ou votre messagerie.</p>
-    <p>La page « La boutique » affiche un plan OpenStreetMap : en l’affichant, votre navigateur contacte les serveurs d’OpenStreetMap, qui ne déposent pas de cookie publicitaire. Les liens vers Google Maps, Instagram et TikTok ouvrent ces services, soumis à leurs propres règles.</p>
-
-    <h2>Informations produits</h2>
-    <p>Les descriptions sont données à titre indicatif. La liste des allergènes de chaque produit est disponible en boutique : en cas d’allergie, demandez toujours conseil avant achat.</p>
+  <div class="cadre legal" style="padding-bottom:clamp(4rem,10vw,8rem)">
+    <nav class="legal__nav" aria-label="Sommaire">
+      <ol>{sommaire.map(([id, t]) => <li><a href={`#${id}`} data-ancre={id}>{t}</a></li>)}</ol>
+    </nav>
+    <div class="legal__corps">
+      <section id="editeur">
+        <h2>Éditeur du site</h2>
+        <dl>
+          <dt>Boutique</dt><dd>{boutique.nom_complet}, boutique franchisée du réseau {boutique.reseau}</dd>
+          <dt>Société</dt><dd><Val v={m.raison_sociale} /></dd>
+          <dt>Forme juridique</dt><dd><Val v={m.forme_juridique} /></dd>
+          <dt>Capital</dt><dd><Val v={m.capital} /></dd>
+          <dt>Adresse</dt><dd>{adresseLigne}</dd>
+          <dt>Téléphone</dt><dd>{boutique.telephone}</dd>
+          <dt>E-mail</dt><dd><Val v={boutique.email} /></dd>
+          <dt>SIRET</dt><dd><Val v={m.siret} /></dd>
+          <dt>RCS</dt><dd><Val v={m.rcs} /></dd>
+          <dt>TVA intracom.</dt><dd><Val v={m.tva} /></dd>
+          <dt>Responsable de la publication</dt><dd><Val v={m.responsable_publication} /></dd>
+        </dl>
+      </section>
+      <section id="hebergeur">
+        <h2>Hébergeur</h2>
+        <p>Cloudflare, Inc. (service Cloudflare Pages)<br />101 Townsend St., San Francisco, CA 94107, États-Unis<br />Téléphone : +1 (650) 319-8930 · <a class="lien" href="https://www.cloudflare.com" rel="noopener">www.cloudflare.com</a></p>
+      </section>
+      <section id="conception">
+        <h2>Conception et réalisation</h2>
+        <p>{boutique.createur.nom}, micro-entrepreneur · <a class="lien" href={`mailto:${boutique.createur.email}`}>{boutique.createur.email}</a></p>
+      </section>
+      <section id="credits">
+        <h2>Crédits</h2>
+        <p>Photos des produits et logo : réseau {boutique.reseau} (mondedumacaron.fr), utilisés avec son autorisation. <mark class="todo">[À REMPLACER : confirmer l’accord du réseau]</mark></p>
+        <p>Plan interactif : © les contributeurs d’OpenStreetMap.</p>
+      </section>
+      <section id="donnees">
+        <h2>Données personnelles et cookies</h2>
+        <p>Ce site ne dépose aucun cookie, n’utilise aucun outil de mesure d’audience et ne collecte aucune donnée personnelle. Il n’y a ni formulaire, ni compte client. Les liens « Appeler » et « Envoyer un mail » ouvrent simplement votre téléphone ou votre messagerie.</p>
+        <p>Sur la page « La boutique », le plan interactif OpenStreetMap ne se charge que si vous cliquez sur « Afficher le plan interactif » : votre navigateur contacte alors les serveurs d’OpenStreetMap. Les liens vers Google Maps, Instagram et TikTok ouvrent ces services, soumis à leurs propres règles.</p>
+      </section>
+      <section id="produits">
+        <h2>Informations produits</h2>
+        <p>Les descriptions sont données à titre indicatif. La liste des allergènes de chaque produit est disponible en boutique : en cas d’allergie, demandez toujours conseil avant achat.</p>
+      </section>
+    </div>
   </div>
 </Base>

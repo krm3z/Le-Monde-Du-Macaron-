@@ -9,13 +9,18 @@ const liens = [
 ---
 <header class="nav" data-nav>
   <div class="nav__pill">
-    <a class="nav__logo" href="/" aria-label="Accueil">
-      <img src="/logo-monde-du-macaron.webp" width="500" height="116" alt="Le Monde du Macaron" />
+    <a class="nav__logo" href="/" aria-label="Le Monde du Macaron Villefranche, accueil">
+      <img src="/logo-monde-du-macaron.webp" width="500" height="116" alt="" />
+      <span class="nav__ville" aria-hidden="true">Villefranche</span>
     </a>
     <nav class="nav__links" aria-label="Navigation principale">
-      {liens.map((l) => <a href={l.href} aria-current={page === l.id ? 'page' : undefined}>{l.label}</a>)}
+      {liens.map((l) => (
+        <a href={l.href} aria-current={page === l.id ? 'page' : undefined}>
+          {l.label}{page === l.id && <span class="nav__repere" aria-hidden="true"></span>}
+        </a>
+      ))}
     </nav>
-    <a class="btn btn--small nav__call" href={telHref}>Appeler</a>
+    <a class="btn btn--fuchsia btn--petit nav__call" href={telHref}>Appeler</a>
     <button class="nav__burger" type="button" aria-expanded="false" aria-controls="menu-mobile" data-menu-toggle>
       <span class="nav__burger-label">Menu</span>
       <span class="nav__burger-lines" aria-hidden="true"><i></i><i></i></span>
@@ -24,11 +29,11 @@ const liens = [
   <div class="menu" id="menu-mobile" data-menu hidden>
     <nav aria-label="Menu mobile">
       <ul>
-        <li><a href="/" aria-current={page === "accueil" ? "page" : undefined}>Accueil</a></li>
-        {liens.map((l, i) => <li><a href={l.href} aria-current={page === l.id ? "page" : undefined}>{l.label}</a></li>)}
+        <li><a href="/" aria-current={page === 'accueil' ? 'page' : undefined}>Accueil</a></li>
+        {liens.map((l) => <li><a href={l.href} aria-current={page === l.id ? 'page' : undefined}>{l.label}</a></li>)}
       </ul>
     </nav>
-    <a class="btn menu__call" href={telHref}>Appeler la boutique</a>
+    <a class="btn btn--fuchsia menu__call" href={telHref}>Appeler la boutique</a>
   </div>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="macaron-mark" viewBox="0 0 32 32">

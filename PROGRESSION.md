@@ -51,4 +51,4 @@
 - [x] Nom « Le Monde du Macaron Villefranche » + salon de thé dans data/boutique.json.
 - [x] Détourage amélioré de 77 macarons (scripts/photos.mjs, public/photos/detoure/).
 - [x] Outils de contrôle : .tools/qa/pellicule.mjs (captures d'animation), serveur dev (.claude/launch.json « dev », port 4330).
-- [ ] Lot Fondations (voir DIRECTION.md §C), puis lots pages en parallèle (Accueil, Nos macarons, Coffrets, Boutique, Mentions+404), puis revue + Lighthouse + captures + rapport.
+- [x] Refonte réalisée : maison.css, noyau.js + modules par page, 6 pages refaites. Lighthouse mobile 91-100 (a11y/BP/SEO 100), 0 débordement, 0 erreur. Plan dessiné = schéma stylisé (pas l'extrait OSM réel), défilé épinglé et transition partagée non faits.

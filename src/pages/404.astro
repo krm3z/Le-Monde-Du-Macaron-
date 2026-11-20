@@ -1,21 +1,24 @@
 ---
 import Base from '../layouts/Base.astro';
 import { photo } from '../lib/site.js';
-const mac = photo('detoure/macaron-pistache-seul')?.sizes[0];
+// Une étagère de 7 macarons… et une place vide.
+const ids = ['framboise', 'pistache', 'citron', 'myrtille', 'chocolat', 'mangue-passion', 'violette'];
+const macs = ids.map((id) => photo(`detoure/macaron-${id}-seul`)?.sizes[0]).filter(Boolean);
 ---
-<Base page="404" title="Page introuvable" description="Cette page n'existe pas ou plus." noindex>
-  <section class="lost wrap">
-    <div>
-      <p class="lost__num"><span class="sr-only">Erreur 404</span>
-        <span aria-hidden="true">4</span>
-        {mac ? <img src={mac.src} width={mac.w} height={mac.h} alt="" data-lost /> : <span aria-hidden="true">0</span>}
-        <span aria-hidden="true">4</span>
-      </p>
-      <h1 class="h-section">Page introuvable</h1>
-      <p>Cette page n’existe pas ou a changé d’adresse.</p>
-      <div class="btns">
-        <a class="btn" href="/">Retour à l’accueil</a>
-        <a class="btn btn--ghost" href="/nos-macarons/">Voir les macarons</a>
+<Base page="erreur" title="Page introuvable" description="Cette page n'existe pas ou a changé d'adresse." noindex>
+  <section class="perdu nuit">
+    <div class="cadre">
+      <div class="perdu__etagere" aria-hidden="true">
+        {macs.slice(0, 3).map((m, i) => <img src={m.src} width={m.w} height={m.h} alt="" style={`--i:${i}`} />)}
+        <svg class="perdu__vide" viewBox="0 0 100 62"><rect x="2" y="2" width="96" height="58" rx="28" /></svg>
+        {macs.slice(3).map((m, i) => <img src={m.src} width={m.w} height={m.h} alt="" style={`--i:${i + 3}`} />)}
+      </div>
+      <p class="mega" style="color:var(--blanc)" aria-hidden="true">404</p>
+      <h1 class="h2" style="color:var(--blanc);margin:1.5rem 0 1rem">Page introuvable</h1>
+      <p class="texte">Il manque un macaron sur l’étagère : cette page n’existe pas ou a changé d’adresse.</p>
+      <div class="btns" style="margin-top:1.6rem">
+        <a class="btn btn--fuchsia" href="/">Retour à l’accueil</a>
+        <a class="btn" href="/nos-macarons/">Voir les macarons</a>
       </div>
     </div>
   </section>

@@ -1,0 +1,12 @@
+---
+// 5 étoiles remplies au dixième d'après la note (ex. 4,6 → 92 %).
+const { note } = Astro.props;
+const pct = Math.max(0, Math.min(100, (note / 5) * 100));
+const etoile = 'M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 21l1.6-7L2 9.2l7.1-.6z';
+const pos = [0, 26, 52, 78, 104];
+---
+<svg class="etoiles" viewBox="0 0 128 24" role="img" aria-label={`Note ${String(note).replace('.', ',')} sur 5`} data-etoiles style={`--pct:${pct}%`}>
+  <defs><clipPath id="etoiles-remplies"><rect class="etoiles__rect" x="0" y="0" width={1.28 * pct} height="24" /></clipPath></defs>
+  <g class="etoiles__fond">{pos.map((x) => <path d={etoile} transform={`translate(${x} 0)`} />)}</g>
+  <g class="etoiles__plein" clip-path="url(#etoiles-remplies)">{pos.map((x) => <path d={etoile} transform={`translate(${x} 0)`} />)}</g>
+</svg>

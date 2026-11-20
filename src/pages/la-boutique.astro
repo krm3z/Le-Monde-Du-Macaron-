@@ -2,66 +2,93 @@
 import Base from '../layouts/Base.astro';
 import Horaires from '../components/Horaires.astro';
 import Val from '../components/Val.astro';
-import { boutique, telHref, mailHref, noteFr, adresseLigne } from '../lib/site.js';
+import Filet from '../components/Filet.astro';
+import Etoiles from '../components/Etoiles.astro';
+import { boutique, telHref, mailHref, noteFr, adresseLigne, horairesGroupes } from '../lib/site.js';
 const { latitude: lat, longitude: lon } = boutique.geo;
 const d = 0.0035;
 const osm = `https://www.openstreetmap.org/export/embed.html?bbox=${lon - d * 1.6}%2C${lat - d}%2C${lon + d * 1.6}%2C${lat + d}&layer=mapnik&marker=${lat}%2C${lon}`;
 const osmLien = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=18/${lat}/${lon}`;
 const g = boutique.google;
-const etoiles = Math.round(g.note);
+const [numero, ...voie] = boutique.adresse.rue.split(' ');
+const semaine = horairesGroupes().find((x) => !x.plage.startsWith('Fermé'));
+const [hOuv, hFerm] = semaine ? semaine.plage.split(' – ') : ['', ''];
+const s = boutique.salon_de_the;
 ---
 <Base
   page="boutique"
-  title="La boutique : adresse, horaires, plan"
-  description={`${boutique.nom}, ${adresseLigne}. Horaires d'ouverture, plan, itinéraire et téléphone : ${boutique.telephone}.`}
+  title="La boutique : adresse, horaires, plan, salon de thé"
+  description={`${boutique.nom_complet}, ${adresseLigne}. Ouvert ${semaine?.jours.toLowerCase()} de ${hOuv} à ${hFerm}. Plan, itinéraire, salon de thé et téléphone : ${boutique.telephone}.`}
 >
-  <header class="page-head wrap">
-    <p class="eyebrow" data-reveal>Nous trouver</p>
-    <h1 class="h-display" data-reveal>La <em>boutique</em></h1>
-    <p class="lead" data-reveal>Une boutique et un salon de thé en plein centre de Villefranche, sur la rue Nationale.</p>
-  </header>
-
-  <section class="wrap shop" style="padding-bottom:clamp(4rem,10vw,8rem)">
-    <div class="shop__side">
-      <div class="shop__card" data-reveal>
-        <h2>Adresse</h2>
-        <address class="shop__adresse">{boutique.adresse.rue}<br />{boutique.adresse.code_postal} <span style="white-space:nowrap">{boutique.adresse.ville}</span></address>
-        <div class="btns">
-          <a class="btn" href={g.lien_itineraire} rel="noopener" target="_blank">Itinéraire<span class="sr-only"> (nouvel onglet)</span></a>
-          <a class="btn btn--ghost" href={telHref}>Appeler</a>
+  <header class="entete jour cadre">
+    <h1>La boutique</h1>
+    <Filet />
+    <div class="adresse-mega">
+      <span class="mega" data-reveal="chiffres" aria-hidden="true">{numero.split('').map((c) => <span class="masque"><span class="c">{c}</span></span>)}</span>
+      <div>
+        <address class="chapeau">{boutique.adresse.rue}<br />{boutique.adresse.code_postal} {boutique.adresse.ville}</address>
+        <div class="btns" style="margin-top:1.4rem">
+          <a class="btn btn--fuchsia" href={g.lien_itineraire} rel="noopener" target="_blank">Itinéraire<span class="sr-only"> (nouvel onglet)</span></a>
+          <a class="btn" href={telHref}>Appeler le {boutique.telephone}</a>
         </div>
-        <p style="margin:1.4rem 0 0">Tél. <a href={telHref}>{boutique.telephone}</a><br />E-mail : <Val v={boutique.email} /></p>
-      </div>
-      <div class="shop__card" data-reveal>
-        <h2>Horaires</h2>
-        <Horaires />
+        <p class="meta" style="margin-top:1rem">E-mail : <Val v={boutique.email} /></p>
       </div>
     </div>
-    <div style="display:grid;gap:1.5rem">
-      <div class="rating" data-reveal>
-        <span class="rating__note">{noteFr(g.note)}</span>
-        <span class="rating__stars" aria-hidden="true">{'★'.repeat(etoiles)}{'☆'.repeat(5 - etoiles)}</span>
-        <span class="rating__count">sur 5 · <strong data-count-to={g.nombre_avis}>{g.nombre_avis}</strong> avis Google</span>
-        <small>Relevé le {new Date(g.date_releve).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })} · <a href={g.lien_fiche} rel="noopener" target="_blank">Voir les avis<span class="sr-only"> (nouvel onglet)</span></a></small>
+  </header>
+
+  <section class="section nuit" aria-labelledby="titre-horaires">
+    <div class="cadre bloc-horaires">
+      <div>
+        <h2 class="sr-only" id="titre-horaires">Horaires</h2>
+        <p class="statut infos" data-statut={JSON.stringify(boutique.horaires)} style="margin-bottom:1rem">{semaine?.jours} · {semaine?.plage}</p>
+        <p class="mega venir__heures" style="color:var(--blanc)" data-reveal="fondu">
+          <span class="sr-only">{semaine?.jours} de {hOuv} à {hFerm}</span>
+          <span aria-hidden="true">{hOuv}</span><Filet ton="nuit" /><span aria-hidden="true">{hFerm}</span>
+        </p>
+        <p class="legende" style="margin-top:1rem">{semaine?.jours.toLowerCase()}, dimanche fermé</p>
       </div>
-      <div class="map" data-map>
-        <div class="map__ph">
-          <svg class="map__streets" viewBox="0 0 400 340" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
-            <g fill="none" stroke="#FFFFFF" stroke-linecap="round">
-              <path d="M-20 210 C 90 190, 210 200, 420 150" stroke-width="22" />
-              <path d="M120 -20 L 170 360" stroke-width="12" /><path d="M300 -20 L 260 360" stroke-width="10" />
-              <path d="M-20 80 L 420 110" stroke-width="8" /><path d="M-20 300 L 420 280" stroke-width="8" />
-              <path d="M40 -20 L 70 360" stroke-width="6" /><path d="M360 -20 L 380 360" stroke-width="6" />
-            </g>
-            <text x="300" y="168" font-family="Inter, sans-serif" font-size="11" fill="#5F5955" transform="rotate(-8 300 168)">Rue Nationale</text>
-          </svg>
-          <svg class="map__pin" viewBox="0 0 32 32" aria-hidden="true"><use href="#macaron-mark" /></svg>
-          <button class="btn map__btn" type="button" data-map-load data-src={osm} data-title={`Plan OpenStreetMap : ${boutique.nom}, ${adresseLigne}`}>Afficher le plan</button>
-          <small class="map__note">Le plan est chargé depuis OpenStreetMap seulement si vous cliquez.</small>
-        </div>
-        <a class="map__credit" href={osmLien} rel="noopener" target="_blank">Agrandir le plan · © OpenStreetMap<span class="sr-only"> (nouvel onglet)</span></a>
+      <div data-reveal="liste"><Horaires /></div>
+    </div>
+  </section>
+
+  <section class="section jour salon salon--compact" aria-labelledby="titre-salon">
+    <div class="cadre">
+      <h2 class="h2" id="titre-salon" data-reveal="lignes">{s.titre}</h2>
+      <ul class="salon__carte" data-reveal="pose">{s.carte.map((c) => <li>{c}</li>)}</ul>
+      <p class="texte" data-reveal="fondu">{s.texte}</p>
+    </div>
+  </section>
+
+  <section class="cadre" style="padding-bottom:clamp(4rem,9vw,7rem)" aria-label="Plan">
+    <div class="plan" data-plan>
+      <div class="plan__ph">
+        <svg class="plan__rues" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" data-rues>
+          <path d="M-20 60 L 420 90" stroke-width="7" />
+          <path d="M-20 225 L 420 205" stroke-width="7" />
+          <path d="M70 -20 L 95 280" stroke-width="6" />
+          <path d="M300 -20 L 280 280" stroke-width="8" />
+          <path d="M180 -20 L 175 280" stroke-width="5" />
+          <path class="plan__nationale" id="rue-nationale" d="M-20 150 C 90 136, 250 146, 420 120" stroke-width="5" />
+          <text><textPath href="#rue-nationale" startOffset="62%">Rue Nationale</textPath></text>
+        </svg>
+        <svg class="plan__pin" viewBox="0 0 32 32" aria-hidden="true" data-pin><use href="#macaron-mark" /></svg>
+        <button class="btn btn--fuchsia plan__btn" type="button" data-plan-charger data-src={osm} data-title={`Plan OpenStreetMap : ${boutique.nom_complet}, ${adresseLigne}`}>Afficher le plan interactif</button>
+        <small class="plan__note">Le plan est chargé depuis OpenStreetMap seulement si vous cliquez.</small>
       </div>
-      <p style="font-size:.9rem;color:var(--choco-doux)">Pour une commande ou une question : <a href={mailHref()}>écrivez-nous</a> ou appelez-nous.</p>
+      <a class="plan__credit" href={osmLien} rel="noopener" target="_blank">Agrandir · © OpenStreetMap<span class="sr-only"> (nouvel onglet)</span></a>
+    </div>
+  </section>
+
+  <section class="section jour" style="padding-top:0" aria-labelledby="titre-avis">
+    <div class="cadre avis">
+      <span class="mega" data-reveal="chiffres" aria-hidden="true">{noteFr(g.note).split('').map((c) => <span class="masque"><span class="c">{c}</span></span>)}</span>
+      <div>
+        <h2 class="h3" id="titre-avis">Avis Google : {noteFr(g.note)} sur 5</h2>
+        <Etoiles note={g.note} />
+        <p class="chapeau" style="margin-top:.8rem"><strong data-compteur={g.nombre_avis}>{g.nombre_avis}</strong> avis</p>
+        <p class="meta">Relevé le {new Date(g.date_releve).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })} · <a class="lien" href={g.lien_fiche} rel="noopener" target="_blank">voir les avis<span class="sr-only"> (nouvel onglet)</span></a></p>
+        <p class="meta" style="margin-top:1rem">Une question ? <a class="lien" href={mailHref()}>Écrivez-nous</a> ou appelez la boutique.</p>
+      </div>
     </div>
   </section>
 </Base>
