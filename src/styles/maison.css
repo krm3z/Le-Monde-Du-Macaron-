@@ -361,12 +361,9 @@ mark.todo { background: #FFE58A; color: #322C29; padding: 0 .3em; font: 600 .85e
 .mur__nom { position: relative; font: 400 clamp(.78rem, .7rem + .3vw, .95rem)/1.2 var(--serif); text-align: center; }
 .mur__item--sale .mur__nom { font-style: italic; }
 @media (hover: hover) {
-  .mur:has(a:hover) .mur__item a { opacity: .45; }
-  .mur .mur__item a:hover { opacity: 1; }
-  .mur__item a:hover::before { opacity: .22; transform: translate(-50%, -50%) scale(1); }
-  .mur__item a:hover img { transform: translateY(-8px) rotate(-4deg); }
+  .mur__item a:hover img { transform: scale(1.18); }
 }
-.mur__item a:focus-visible img { transform: translateY(-8px); }
+.mur__item a:focus-visible img { transform: scale(1.18); }
 .mur__plus { margin-top: 2rem; }
 @media (max-width: 639px) { .mur:not(.mur--ouvert) .mur__item--plus { display: none; } }
 @media (min-width: 640px) { .mur__plus { display: none; } }
