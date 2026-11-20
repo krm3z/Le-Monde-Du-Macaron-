@@ -48,7 +48,7 @@ function mur({ gsap, ScrollTrigger, reduce, $, $$ }) {
   if (!reduce) {
     ScrollTrigger.batch(items, {
       start: 'top 92%', once: true,
-      onEnter: (els) => gsap.fromTo(els.map((e) => e.querySelector('img') || e), { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.04, ease: 'maison', overwrite: true }),
+      onEnter: (els) => gsap.fromTo(els, { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.04, ease: 'maison', overwrite: true }),
     });
   }
   const boutons = $$('[data-mur-filtre]');
