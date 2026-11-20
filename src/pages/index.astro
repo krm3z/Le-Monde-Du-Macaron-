@@ -15,6 +15,15 @@ const macs = produits.filter((p) => p.famille === 'macaron' && photo(`detoure/${
 const bandeau = macs.filter((_, i) => i % 6 === 2).slice(0, 12);
 const sucres = produits.filter((p) => p.categorie === 'sucré');
 const sales = produits.filter((p) => p.categorie === 'salé');
+// Mur de macarons rangé par couleur : teintes vives en dégradé (rose → rouge → orange → jaune → vert → bleu → violet), puis crèmes et chocolats
+import couleurs from '../generated/couleurs.json';
+const cle = (p) => {
+  const c = couleurs[p.id];
+  if (!c) return 9999;
+  if (!c.colore) return 1000 + (1 - c.l) * 100; // crèmes puis chocolats
+  return (c.h + 30) % 360; // roses, rouges, oranges, jaunes, verts, bleus, violets
+};
+const mur = [...sucres, ...sales].sort((a, b) => cle(a) - cle(b));
 const nbMacarons = sucres.length + sales.length;
 const semaine = horairesGroupes().find((g) => !g.plage.startsWith('Fermé'));
 const [hOuv, hFerm] = semaine ? semaine.plage.split(' – ') : ['', ''];
@@ -93,18 +102,26 @@ const motsNom = [['Le', 'Monde'], ['du'], ['Macaron'], ['Villefranche']];
           <p class="legende" style="margin-top:1rem">{nbProduits('sucré')} sucrés, {nbProduits('salé')} salés, et {nbProduits('autre')} calissons. {boutique.textes.intro_accueil}</p>
         </div>
       </div>
-      <div class="index" data-index>
-        <h3>Sucrés</h3>
-        <p data-reveal="fondu">{sucres.map((p, i) => (
-          <>{i > 0 && <span class="sep" aria-hidden="true">◆</span>}<a href={`/nos-macarons/#${p.id}`} data-apercu={photo(`detoure/${p.photo}`)?.sizes[0].src}>{p.nom}</a></>
-        ))}</p>
-        <h3>Salés</h3>
-        <p class="index__sales" data-reveal="fondu">{sales.map((p, i) => (
-          <>{i > 0 && <span class="sep" aria-hidden="true">◆</span>}<a href={`/nos-macarons/#${p.id}`} data-apercu={photo(`detoure/${p.photo}`)?.sizes[0].src}>{p.nom}</a></>
-        ))}</p>
+      <div class="mur__onglets" role="group" aria-label="Afficher" data-mur-onglets>
+        <button type="button" aria-pressed="true" data-mur-filtre="tout">Tous <sup>{nbMacarons}</sup></button>
+        <button type="button" aria-pressed="false" data-mur-filtre="sucré">Sucrés <sup>{sucres.length}</sup></button>
+        <button type="button" aria-pressed="false" data-mur-filtre="salé">Salés <sup>{sales.length}</sup></button>
       </div>
+      <ul class="mur" role="list" data-mur>
+        {mur.map((p, i) => {
+          const d = photo(`detoure/${p.photo}`)?.sizes[0];
+          return (
+            <li class:list={['mur__item', { 'mur__item--sale': p.categorie === 'salé', 'mur__item--plus': i >= 16 }]} data-cat={p.categorie} style={`--teinte:${couleurs[p.id]?.hex ?? '#ccc'}`}>
+              <a href={`/nos-macarons/#${p.id}`}>
+                {d ? <img src={d.src} width={d.w} height={d.h} alt="" loading="lazy" decoding="async" /> : <span class="photo-a-venir">Photo à venir</span>}
+                <span class="mur__nom">{p.nom}</span>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+      <button class="btn mur__plus" type="button" aria-expanded="false" data-mur-plus>Voir les {nbMacarons} parfums</button>
     </div>
-    <div class="apercu" aria-hidden="true" data-apercu-box><img alt="" width="360" height="224" /></div>
   </section>
 
   <section class="section jour salon" aria-labelledby="titre-salon" style="padding-top:0">

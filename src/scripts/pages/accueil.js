@@ -1,5 +1,8 @@
-// Accueil : relief de la vitrine au défilement, bandeau, aperçu au curseur.
-export default function init({ gsap, reduce, $, $$ }) {
+// Accueil : relief de la vitrine au défilement, bandeau, mur de macarons.
+import { Flip } from 'gsap/Flip';
+
+export default function init(ctx) {
+  const { gsap, reduce, $ } = ctx;
   // Retour depuis une autre page du site : intro plus courte (décidé par le referrer, aucun stockage)
   const vitrine = $('[data-vitrine]');
   if (document.referrer.startsWith(location.origin)) vitrine?.classList.add('intro-courte');
@@ -30,32 +33,45 @@ export default function init({ gsap, reduce, $, $$ }) {
       pause.textContent = arret ? 'Reprendre' : 'Mettre en pause';
       gsap.to(boucle, { timeScale: arret ? 0 : 1, duration: 0.5, overwrite: true });
     });
-    // hors écran : on arrête la boucle (économie de batterie)
     new IntersectionObserver(([e]) => { if (!arret) boucle[e.isIntersecting ? 'resume' : 'pause'](); }).observe(bandeau);
   }
 
-  // Aperçu flottant d'un macaron au survol de l'index (ordinateur seulement)
-  const box = $('[data-apercu-box]');
-  if (!reduce && box && matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    const img = $('img', box);
-    const x = gsap.quickTo(box, 'x', { duration: 0.45, ease: 'power3' });
-    const y = gsap.quickTo(box, 'y', { duration: 0.45, ease: 'power3' });
-    let dernierX = 0;
-    gsap.set(box, { xPercent: -50, yPercent: -60, scale: 0.6 });
-    addEventListener('pointermove', (e) => {
-      x(e.clientX); y(e.clientY);
-      gsap.to(box, { rotation: gsap.utils.clamp(-8, 8, (e.clientX - dernierX) * 0.6), duration: 0.4 });
-      dernierX = e.clientX;
-    }, { passive: true });
-    $$('[data-apercu]').forEach((a) => {
-      const montrer = () => {
-        if (!a.dataset.apercu) return;
-        if (img.getAttribute('src') !== a.dataset.apercu) img.src = a.dataset.apercu;
-        gsap.to(box, { opacity: 1, scale: 1, duration: 0.35, ease: 'maison', overwrite: 'auto' });
-      };
-      const cacher = () => gsap.to(box, { opacity: 0, scale: 0.6, duration: 0.25, overwrite: 'auto' });
-      a.addEventListener('pointerenter', montrer);
-      a.addEventListener('pointerleave', cacher);
+  mur(ctx);
+}
+
+// Mur de macarons rangé par couleur : pose par rangées, onglets Sucrés/Salés (Flip), « voir les 79 » sur téléphone
+function mur({ gsap, ScrollTrigger, reduce, $, $$ }) {
+  gsap.registerPlugin(Flip);
+  const liste = $('[data-mur]');
+  if (!liste) return;
+  const items = $$('.mur__item', liste);
+  if (!reduce) {
+    ScrollTrigger.batch(items, {
+      start: 'top 92%', once: true,
+      onEnter: (els) => gsap.fromTo(els.map((e) => e.querySelector('img') || e), { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.04, ease: 'maison', overwrite: true }),
     });
   }
+  const boutons = $$('[data-mur-filtre]');
+  boutons.forEach((b) => b.addEventListener('click', () => {
+    const f = b.dataset.murFiltre;
+    boutons.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    const etat = reduce ? null : Flip.getState(items);
+    items.forEach((it) => { it.hidden = !(f === 'tout' || it.dataset.cat === f); });
+    if (etat) {
+      Flip.from(etat, {
+        duration: 0.6, ease: 'rideau', absolute: true, stagger: 0.008,
+        onEnter: (els) => gsap.fromTo(els, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.45 }),
+        onLeave: (els) => gsap.to(els, { opacity: 0, scale: 0.8, duration: 0.3 }),
+        onComplete: () => ScrollTrigger.refresh(),
+      });
+    }
+  }));
+  const plus = $('[data-mur-plus]');
+  plus?.addEventListener('click', () => {
+    const ouvert = liste.classList.toggle('mur--ouvert');
+    plus.setAttribute('aria-expanded', String(ouvert));
+    plus.textContent = ouvert ? 'Voir moins' : `Voir les ${items.length} parfums`;
+    if (!ouvert) liste.scrollIntoView({ block: 'start' });
+    ScrollTrigger.refresh();
+  });
 }

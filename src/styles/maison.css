@@ -345,3 +345,28 @@ mark.todo { background: #FFE58A; color: #322C29; padding: 0 .3em; font: 600 .85e
 .salon__img { display: block; aspect-ratio: 4 / 5; overflow: hidden; background: var(--gris); }
 .salon__img img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.32); transition: transform .9s var(--ease-maison); }
 .salon__photo:hover .salon__img img { transform: scale(1.38); }
+
+/* Mur de macarons (accueil), rangé par couleur */
+.mur__onglets { display: flex; gap: .3rem; margin-bottom: 1.6rem; border-bottom: 1px solid var(--filet); }
+.mur__onglets button { min-height: 44px; padding: .5rem 1rem; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; background: none; color: var(--doux); font: 500 .95rem var(--sans); cursor: pointer; }
+.mur__onglets button[aria-pressed='true'] { color: var(--brun); border-bottom-color: var(--fuchsia); }
+.mur__onglets sup { font-size: .7em; margin-left: .2em; }
+.mur { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(.9rem, 2vw, 1.6rem) clamp(.4rem, 1.2vw, 1rem); }
+@media (min-width: 640px) { .mur { grid-template-columns: repeat(6, 1fr); } }
+@media (min-width: 1100px) { .mur { grid-template-columns: repeat(8, 1fr); } }
+.mur__item[hidden] { display: none; }
+.mur__item a { position: relative; display: grid; justify-items: center; gap: .45rem; text-decoration: none; padding: .4rem .2rem; transition: opacity .3s ease-out; }
+.mur__item a::before { content: ''; position: absolute; left: 50%; top: 34%; width: 74%; aspect-ratio: 1; border-radius: 50%; background: var(--teinte); opacity: 0; transform: translate(-50%, -50%) scale(.6); transition: opacity .4s var(--ease-maison), transform .4s var(--ease-maison); }
+.mur__item img { position: relative; width: 100%; max-width: 120px; height: auto; transition: transform .45s var(--ease-maison); }
+.mur__nom { position: relative; font: 400 clamp(.78rem, .7rem + .3vw, .95rem)/1.2 var(--serif); text-align: center; }
+.mur__item--sale .mur__nom { font-style: italic; }
+@media (hover: hover) {
+  .mur:has(a:hover) .mur__item a { opacity: .45; }
+  .mur .mur__item a:hover { opacity: 1; }
+  .mur__item a:hover::before { opacity: .22; transform: translate(-50%, -50%) scale(1); }
+  .mur__item a:hover img { transform: translateY(-8px) rotate(-4deg); }
+}
+.mur__item a:focus-visible img { transform: translateY(-8px); }
+.mur__plus { margin-top: 2rem; }
+@media (max-width: 639px) { .mur:not(.mur--ouvert) .mur__item--plus { display: none; } }
+@media (min-width: 640px) { .mur__plus { display: none; } }

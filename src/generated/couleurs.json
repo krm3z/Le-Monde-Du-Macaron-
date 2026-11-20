@@ -1,0 +1,541 @@
+{
+ "ananas-vanille": {
+  "h": 35,
+  "part": 0.066,
+  "l": 0.468,
+  "colore": false,
+  "hex": "#7d5122"
+ },
+ "barbe-a-papa": {
+  "h": 5,
+  "part": 0.966,
+  "l": 0.441,
+  "colore": true,
+  "hex": "#93554f"
+ },
+ "bergamotte": {
+  "h": 185,
+  "part": 0.859,
+  "l": 0.32,
+  "colore": true,
+  "hex": "#336a6e"
+ },
+ "biscuit-petit-beurre": {
+  "h": 35,
+  "part": 0.082,
+  "l": 0.412,
+  "colore": false,
+  "hex": "#5c370f"
+ },
+ "bounty": {
+  "h": 15,
+  "part": 0.082,
+  "l": 0.399,
+  "colore": false,
+  "hex": "#47302c"
+ },
+ "cacahuete-enrobee-mandms": {
+  "h": 15,
+  "part": 0.184,
+  "l": 0.371,
+  "colore": false,
+  "hex": "#86553b"
+ },
+ "cafe": {
+  "h": 15,
+  "part": 0.031,
+  "l": 0.362,
+  "colore": false,
+  "hex": "#362622"
+ },
+ "calisson": {
+  "h": 45,
+  "part": 0.061,
+  "l": 0.56,
+  "colore": false,
+  "hex": "#bda245"
+ },
+ "caramel-beurre-sale": {
+  "h": 25,
+  "part": 0.006,
+  "l": 0.406,
+  "colore": false,
+  "hex": "#482e23"
+ },
+ "cassis": {
+  "h": 335,
+  "part": 0.126,
+  "l": 0.478,
+  "colore": false,
+  "hex": "#533841"
+ },
+ "cerise": {
+  "h": 355,
+  "part": 0.308,
+  "l": 0.429,
+  "colore": true,
+  "hex": "#77474a"
+ },
+ "cerise-pistache": {
+  "h": 75,
+  "part": 0.674,
+  "l": 0.325,
+  "colore": true,
+  "hex": "#6b6843"
+ },
+ "champagne": {
+  "h": 5,
+  "part": 0.631,
+  "l": 0.445,
+  "colore": true,
+  "hex": "#974c44"
+ },
+ "chocolat": {
+  "h": 15,
+  "part": 0.09,
+  "l": 0.369,
+  "colore": false,
+  "hex": "#403234"
+ },
+ "chocolat-blanc": {
+  "h": 25,
+  "part": 0.011,
+  "l": 0.461,
+  "colore": false,
+  "hex": "#513422"
+ },
+ "chocolat-framboise": {
+  "h": 5,
+  "part": 0.427,
+  "l": 0.356,
+  "colore": true,
+  "hex": "#945c5a"
+ },
+ "chocolat-passion": {
+  "h": 15,
+  "part": 0.064,
+  "l": 0.348,
+  "colore": false,
+  "hex": "#4c342f"
+ },
+ "citron": {
+  "h": 45,
+  "part": 0.554,
+  "l": 0.422,
+  "colore": true,
+  "hex": "#aa902b"
+ },
+ "citron-vert-cactus": {
+  "h": 105,
+  "part": 0.976,
+  "l": 0.42,
+  "colore": true,
+  "hex": "#5b8357"
+ },
+ "cookie": {
+  "h": 25,
+  "part": 0.036,
+  "l": 0.403,
+  "colore": false,
+  "hex": "#5b341f"
+ },
+ "coquelicot": {
+  "h": 5,
+  "part": 0.501,
+  "l": 0.448,
+  "colore": true,
+  "hex": "#984f46"
+ },
+ "creme-brulee": {
+  "h": 45,
+  "part": 0.566,
+  "l": 0.475,
+  "colore": true,
+  "hex": "#b99d3e"
+ },
+ "crumble-pomme": {
+  "h": 85,
+  "part": 0.42,
+  "l": 0.405,
+  "colore": true,
+  "hex": "#648525"
+ },
+ "feve-de-tonka": {
+  "h": 25,
+  "part": 0.175,
+  "l": 0.472,
+  "colore": false,
+  "hex": "#7f4320"
+ },
+ "figue": {
+  "h": 215,
+  "part": 0.171,
+  "l": 0.342,
+  "colore": false,
+  "hex": "#433741"
+ },
+ "fleur-d-oranger": {
+  "h": 45,
+  "part": 0.082,
+  "l": 0.541,
+  "colore": false,
+  "hex": "#a58327"
+ },
+ "fraise": {
+  "h": 5,
+  "part": 0.49,
+  "l": 0.369,
+  "colore": true,
+  "hex": "#80423a"
+ },
+ "fraise-tagada": {
+  "h": 15,
+  "part": 0.094,
+  "l": 0.48,
+  "colore": false,
+  "hex": "#6f3a2b"
+ },
+ "framboise": {
+  "h": 355,
+  "part": 0.9,
+  "l": 0.395,
+  "colore": true,
+  "hex": "#844649"
+ },
+ "framboise-litchi-rose": {
+  "h": 5,
+  "part": 0.89,
+  "l": 0.454,
+  "colore": true,
+  "hex": "#9d524d"
+ },
+ "framboise-myrtille-violette": {
+  "h": 335,
+  "part": 0.161,
+  "l": 0.547,
+  "colore": false,
+  "hex": "#63414d"
+ },
+ "gianduja": {
+  "h": 15,
+  "part": 0.133,
+  "l": 0.356,
+  "colore": false,
+  "hex": "#452f2b"
+ },
+ "grand-marnier": {
+  "h": 25,
+  "part": 0.14,
+  "l": 0.464,
+  "colore": false,
+  "hex": "#936137"
+ },
+ "guimauve": {
+  "h": 15,
+  "part": 0.089,
+  "l": 0.469,
+  "colore": false,
+  "hex": "#6c392a"
+ },
+ "kiwi-banane": {
+  "h": 65,
+  "part": 0.913,
+  "l": 0.329,
+  "colore": true,
+  "hex": "#7d7e23"
+ },
+ "mandarine-yuzu": {
+  "h": 25,
+  "part": 0.512,
+  "l": 0.507,
+  "colore": true,
+  "hex": "#ba784b"
+ },
+ "mangue-passion": {
+  "h": 75,
+  "part": 0.564,
+  "l": 0.356,
+  "colore": true,
+  "hex": "#625d27"
+ },
+ "marron-glace": {
+  "h": 25,
+  "part": 0.103,
+  "l": 0.398,
+  "colore": false,
+  "hex": "#6e3d1c"
+ },
+ "melon": {
+  "h": 25,
+  "part": 0.128,
+  "l": 0.463,
+  "colore": false,
+  "hex": "#7a6935"
+ },
+ "menthe-glaciale": {
+  "h": 185,
+  "part": 0.923,
+  "l": 0.407,
+  "colore": true,
+  "hex": "#46888a"
+ },
+ "mirabelle-thym": {
+  "h": 45,
+  "part": 0.339,
+  "l": 0.352,
+  "colore": true,
+  "hex": "#795f20"
+ },
+ "mojito": {
+  "h": 75,
+  "part": 0.885,
+  "l": 0.373,
+  "colore": true,
+  "hex": "#6a7746"
+ },
+ "myrtille": {
+  "h": 235,
+  "part": 0.34,
+  "l": 0.263,
+  "colore": true,
+  "hex": "#302c40"
+ },
+ "noix-de-coco": {
+  "h": 55,
+  "part": 0,
+  "l": 0.487,
+  "colore": false,
+  "hex": "#c0be9f"
+ },
+ "nougat": {
+  "h": 15,
+  "part": 0.032,
+  "l": 0.467,
+  "colore": false,
+  "hex": "#875a4d"
+ },
+ "nutella": {
+  "h": 15,
+  "part": 0.024,
+  "l": 0.416,
+  "colore": false,
+  "hex": "#452f2d"
+ },
+ "oreo": {
+  "h": 215,
+  "part": 0.113,
+  "l": 0.424,
+  "colore": false,
+  "hex": "#2e3644"
+ },
+ "pain-d-epices": {
+  "h": 25,
+  "part": 0.038,
+  "l": 0.438,
+  "colore": false,
+  "hex": "#5d371c"
+ },
+ "peche-de-vigne": {
+  "h": 15,
+  "part": 0.076,
+  "l": 0.4,
+  "colore": false,
+  "hex": "#674135"
+ },
+ "pistache": {
+  "h": 75,
+  "part": 0.954,
+  "l": 0.375,
+  "colore": true,
+  "hex": "#6c7e44"
+ },
+ "poire-the-vert": {
+  "h": 75,
+  "part": 0.586,
+  "l": 0.359,
+  "colore": true,
+  "hex": "#69733e"
+ },
+ "pomme-d-amour": {
+  "h": 5,
+  "part": 0.694,
+  "l": 0.353,
+  "colore": true,
+  "hex": "#794339"
+ },
+ "praline": {
+  "h": 25,
+  "part": 0.035,
+  "l": 0.414,
+  "colore": false,
+  "hex": "#5d361b"
+ },
+ "praline-grenadine": {
+  "h": 5,
+  "part": 0.923,
+  "l": 0.417,
+  "colore": true,
+  "hex": "#8e5046"
+ },
+ "rhum-raisin": {
+  "h": 35,
+  "part": 0.002,
+  "l": 0.451,
+  "colore": false,
+  "hex": "#6b4e1f"
+ },
+ "speculoos": {
+  "h": 25,
+  "part": 0.013,
+  "l": 0.41,
+  "colore": false,
+  "hex": "#493022"
+ },
+ "tarte-aux-fraises": {
+  "h": 5,
+  "part": 0.697,
+  "l": 0.401,
+  "colore": true,
+  "hex": "#894e45"
+ },
+ "tarte-citron": {
+  "h": 35,
+  "part": 0.09,
+  "l": 0.42,
+  "colore": false,
+  "hex": "#644719"
+ },
+ "tarte-tatin": {
+  "h": 45,
+  "part": 0.036,
+  "l": 0.396,
+  "colore": false,
+  "hex": "#87733d"
+ },
+ "tiramisu": {
+  "h": 15,
+  "part": 0.011,
+  "l": 0.367,
+  "colore": false,
+  "hex": "#462c20"
+ },
+ "tutti-frutti": {
+  "h": 185,
+  "part": 0.827,
+  "l": 0.302,
+  "colore": true,
+  "hex": "#35686a"
+ },
+ "vanille": {
+  "h": 15,
+  "part": 0.038,
+  "l": 0.466,
+  "colore": false,
+  "hex": "#84584b"
+ },
+ "vanille-fraise": {
+  "h": 5,
+  "part": 0.423,
+  "l": 0.368,
+  "colore": true,
+  "hex": "#7c3d33"
+ },
+ "vanille-noix-de-pecan": {
+  "h": 25,
+  "part": 0.021,
+  "l": 0.417,
+  "colore": false,
+  "hex": "#4a3123"
+ },
+ "violette": {
+  "h": 255,
+  "part": 0.131,
+  "l": 0.364,
+  "colore": false,
+  "hex": "#3c3648"
+ },
+ "yuzu": {
+  "h": 45,
+  "part": 0.131,
+  "l": 0.458,
+  "colore": false,
+  "hex": "#7f6724"
+ },
+ "abricot-vanille-fleur-de-sel": {
+  "h": 25,
+  "part": 0.348,
+  "l": 0.477,
+  "colore": true,
+  "hex": "#955a35"
+ },
+ "boursin": {
+  "h": 75,
+  "part": 0.568,
+  "l": 0.338,
+  "colore": true,
+  "hex": "#636d3b"
+ },
+ "chevre-basilic": {
+  "h": 35,
+  "part": 0.032,
+  "l": 0.469,
+  "colore": false,
+  "hex": "#664e26"
+ },
+ "chevre-thym": {
+  "h": 35,
+  "part": 0.028,
+  "l": 0.513,
+  "colore": false,
+  "hex": "#715328"
+ },
+ "chorizo": {
+  "h": 15,
+  "part": 0.575,
+  "l": 0.372,
+  "colore": true,
+  "hex": "#84442f"
+ },
+ "figue-oignon": {
+  "h": 25,
+  "part": 0.024,
+  "l": 0.501,
+  "colore": false,
+  "hex": "#ac8364"
+ },
+ "foie-gras-piment": {
+  "h": 25,
+  "part": 0.304,
+  "l": 0.386,
+  "colore": true,
+  "hex": "#72401a"
+ },
+ "roquefort": {
+  "h": 35,
+  "part": 0.009,
+  "l": 0.491,
+  "colore": false,
+  "hex": "#a49b77"
+ },
+ "roquefort-noix": {
+  "h": 35,
+  "part": 0.006,
+  "l": 0.483,
+  "colore": false,
+  "hex": "#594025"
+ },
+ "saumon-aneth": {
+  "h": 355,
+  "part": 0.876,
+  "l": 0.426,
+  "colore": true,
+  "hex": "#885258"
+ },
+ "tomate-basilic": {
+  "h": 15,
+  "part": 0.105,
+  "l": 0.474,
+  "colore": false,
+  "hex": "#9d6451"
+ }
+}
