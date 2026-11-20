@@ -27,3 +27,4 @@ lighthouse/*.json
 
 # Réglages locaux de Claude Code
 .claude/
+graphify-out/
